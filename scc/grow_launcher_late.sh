@@ -1,0 +1,3 @@
+qsub -v "args= --output_dir=outputs/imagenet/gm_gradmax_late  --config=growneuron/imagenet/configs/grow_all_at_once_resnet_late.py --config.grow_type=add_gradmax" -N gm_gradmax_late -o ../outputs/imagenet/gm_gradmax_late/gm_gradmax_late.o grow_template.sh
+qsub -v "args= --output_dir=outputs/imagenet/gm_firefly_late  --config=growneuron/imagenet/configs/grow_all_at_once_resnet_late.py --config.grow_type=add_firefly" -N gm_firefly_late -o ../outputs/imagenet/gm_firefly_late/gm_firefly_late.o grow_template.sh
+qsub -v "args= --output_dir=outputs/imagenet/gm_random_late --config=growneuron/imagenet/configs/grow_all_at_once_resnet_late.py --config.grow_type=add_random" -N gm_random_late -o ../outputs/imagenet/gm_random_late/gm_random_late.o grow_template.sh

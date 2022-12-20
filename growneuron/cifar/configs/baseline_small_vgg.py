@@ -26,7 +26,7 @@ def get_config():
   config.model = ml_collections.ConfigDict()
   config.model.depth = 11
   config.model.normalization_type = 'none'
-  config.model.width_multiplier = 0.25
+  config.model.width_multiplier = 0.5
   config.optimizer.base_learning_rate = 0.05
 
   return config

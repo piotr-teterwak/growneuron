@@ -54,7 +54,7 @@ def get_config():
   # Number of epochs between saving checkpoints. Use -1 for no checkpoints.
   config.checkpoint_interval = 25
   # One of  ['cifar10', 'cifar100']
-  config.dataset = 'cifar10'
+  config.dataset = 'cifar100'
   # Whether to cache the dataset.
   config.cache_dataset = True
   # WBatch size per TPU core/GPU. The number of new datapoints gathered per

@@ -34,6 +34,7 @@ from growneuron import updaters
 from growneuron.cifar import data
 from growneuron.cifar import vgg
 from growneuron.cifar import wide_resnet
+from growneuron.cifar import resnet50
 import growneuron.layers as glayers
 from ml_collections import config_flags
 import tensorflow as tf
@@ -92,7 +93,6 @@ def main(argv):
   logging.get_absl_handler().setFormatter(formatter)
   del argv  # unused arg
   config = FLAGS.config
-
   tf.io.gfile.makedirs(FLAGS.output_dir)
   logging.info('Saving checkpoints at %s', FLAGS.output_dir)
   tf.random.set_seed(config.seed)
@@ -112,7 +112,6 @@ def main(argv):
         config.updater.update_frequency * multiplier)
     config.updater.start_iteration = int(
         config.updater.start_iteration * multiplier)
-
   train_dataset_size = ds_info.splits['train'].num_examples
   steps_per_epoch = train_dataset_size // batch_size
   logging.info('Steps per epoch %s', steps_per_epoch)
@@ -207,6 +206,23 @@ def main(argv):
                             if isinstance(l, glayers.GrowLayer)]
           start_index, end_index = glayer_indices[0], glayer_indices[-1]
           grow_layer_tuples.append(block_layers[start_index:(end_index+1)])
+    elif arch_name == 'resnet':
+      logging.info('Building ResNet model')
+      model = resnet50.create_model(
+          num_classes=num_classes,
+          seed=config.seed,
+          **config.model)
+      for block_seq in model.group_seq:
+        for block_layers, _, _, _ in block_seq:
+          # We need to get all layers between the two grow layers.
+          glayer_indices = [i for i, l in enumerate(block_layers)
+                            if (isinstance(l, glayers.GrowLayer) and
+                            isinstance(l.layer,tf.keras.layers.Conv2D))]
+          for i, j in zip(glayer_indices[:-1], glayer_indices[1:]):
+              grow_layer_tuples.append(block_layers[i:(j+1)])
+          #start_index, end_index = glayer_indices[0], glayer_indices[-1]
+          #grow_layer_tuples.append(block_layers[start_index:(end_index+1)])
+
     elif arch_name == 'vgg':
       logging.info('Building VGG model')
       model = vgg.create_model(

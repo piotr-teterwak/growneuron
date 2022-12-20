@@ -24,17 +24,17 @@ def get_config():
   config.optimizer = ml_collections.ConfigDict()
   # Base learning rate when total batch size is 128. It is scaled by the ratio
   # of the total batch size to 128.
-  config.optimizer.base_learning_rate = 0.05
+  config.optimizer.base_learning_rate = 0.1
   # One of 'step', 'cosine'
-  config.optimizer.decay_type = 'step'
-  config.optimizer.nesterov = False
+  config.optimizer.decay_type = 'cosine'
+  config.optimizer.nesterov = True
   # Amount to decay learning rate.
-  config.optimizer.lr_decay_ratio = 0.1
+  config.optimizer.lr_decay_ratio = 0.2
   # Epochs to decay learning rate by.
   config.optimizer.lr_decay_epochs = [0.3, 0.6, 0.8]
   # Number of epochs for a linear warmup to the initial learning rate. Use 0 to'
   # do no warmup.
-  config.optimizer.lr_warmup_epochs = 5
+  config.optimizer.lr_warmup_epochs = 1
   # Optimizer momentum.
   config.optimizer.momentum = 0.9
   # Following is empty for the baselines and used by the growing algorithms.
@@ -45,21 +45,25 @@ def get_config():
 
   config.model = ml_collections.ConfigDict()
   # L2 regularization coefficient.
-  config.model.l2_coef = 1e-4
-  config.model.width_multiplier = 0.25
-  config.model.normalization_type = 'batchnorm'
+  config.model.l2_coef = 2e-4
+  config.model.depth = 28
+  config.model.width_multiplier = 10
+  config.model.normalization_type = 'none'
+  config.model.block_width_multiplier = 0.25
 
   # Number of epochs between saving checkpoints. Use -1 for no checkpoints.
-  config.checkpoint_interval = 25
-  config.dataset = 'imagenet2012'
-  #config.dataset.manual_dir = '/projectnb/ivc-ml/piotrt/data/tfds_imagenet'
+  config.checkpoint_interval = 1
+  # One of  ['cifar10', 'cifar100']
+  config.dataset = 'cifar100'
+  # Whether to cache the dataset.
+  config.cache_dataset = True
   # WBatch size per TPU core/GPU. The number of new datapoints gathered per
   # batch is this number divided by ensemble_size (we tile the batch by that #
   # of times).
-  config.per_core_batch_size = 64
+  config.per_core_batch_size = 128
   config.num_cores = 1
   config.seed = 8
-  config.train_epochs = 90
+  config.train_epochs = 100
   config.log_freq = 200
 
   return config

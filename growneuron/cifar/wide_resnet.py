@@ -60,7 +60,8 @@ def basic_block(
     normalization_type,
     strides,
     l2,
-    seed):
+    seed,
+    skip=False):
   """Basic residual block of two 3x3 convs.
 
   Args:
@@ -107,7 +108,7 @@ def basic_block(
                  kernel_regularizer=tf.keras.regularizers.l2(l2)))
   ]
 
-  if strides > 1:
+  if strides > 1 or skip:
     skip_layer = Conv2D(filters, kernel_size=1, strides=strides, seed=seeds[2],
                         kernel_regularizer=tf.keras.regularizers.l2(l2))
   else:
@@ -168,11 +169,15 @@ class WideResnet(tf.keras.Model):
           [seed, seed + 1], num_blocks)[:, 0]
       for j, group_seed in enumerate(group_seeds):
         block_strides = strides if j == 0 else 1
+        if (i == 0) and (j == 0):
+            skip = True
+        else:
+            skip = False
         block_seq.append(
-            basic_block(filters=filters*width_multiplier,
+            basic_block(filters=filters * width_multiplier,
                         block_width=block_width_multiplier,
                         normalization_type=normalization_type,
-                        strides=block_strides, l2=l2, seed=group_seed)
+                        strides=block_strides, l2=l2, seed=group_seed, skip=skip)
             )
       self.group_seq.append(block_seq)
 

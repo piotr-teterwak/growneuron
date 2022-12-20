@@ -21,6 +21,7 @@ def get_config():
   """Builds and returns config."""
   config = ml_collections.ConfigDict()
 
+  config.architecture = 'resnet'
   config.optimizer = ml_collections.ConfigDict()
   # Base learning rate when total batch size is 128. It is scaled by the ratio
   # of the total batch size to 128.
@@ -34,7 +35,7 @@ def get_config():
   config.optimizer.lr_decay_epochs = [0.3, 0.6, 0.8]
   # Number of epochs for a linear warmup to the initial learning rate. Use 0 to'
   # do no warmup.
-  config.optimizer.lr_warmup_epochs = 5
+  config.optimizer.lr_warmup_epochs = 10
   # Optimizer momentum.
   config.optimizer.momentum = 0.9
   # Following is empty for the baselines and used by the growing algorithms.
@@ -56,8 +57,9 @@ def get_config():
   # WBatch size per TPU core/GPU. The number of new datapoints gathered per
   # batch is this number divided by ensemble_size (we tile the batch by that #
   # of times).
-  config.per_core_batch_size = 64
-  config.num_cores = 1
+  #config.per_core_batch_size = 64
+  config.per_core_batch_size = 32
+  config.num_cores = 4
   config.seed = 8
   config.train_epochs = 90
   config.log_freq = 200

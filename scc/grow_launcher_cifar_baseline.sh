@@ -1,0 +1,11 @@
+#qsub -v "args= --output_dir=outputs/cifar/baseline/gm_small_baseline_cifar --config=growneuron/cifar/configs/baseline_small_28_5_baseline.py " -N gm_small_baseline_cifar -o ../outputs/cifar/baseline/gm_small_baseline_cifar/gm_small_baseline_cifar.o grow_template_cifar.sh
+#qsub -v "args=  --output_dir=outputs/cifar/baseline/gm_gradmax_cifar --config=growneuron/cifar/configs/grow_all_at_once_28_5_baseline.py --config.grow_type=add_gradmax" -N gm_gradmax_cifar -o ../outputs/cifar/baseline/gm_gradmax_cifar/gm_gradmax_cifar.o grow_template_cifar.sh
+#qsub -v "args=  --output_dir=outputs/cifar/baseline/gm_firefly_cifar --config=growneuron/cifar/configs/grow_all_at_once_28_5_baseline.py --config.grow_type=add_firefly" -N gm_firefly_cifar -o ../outputs/cifar/baseline/gm_firefly_cifar/gm_firefly_cifar.o grow_template_cifar.sh
+#qsub -v "args=  --output_dir=outputs/cifar/baseline/gm_random_cifar --config=growneuron/cifar/configs/grow_all_at_once_28_5_baseline.py --config.grow_type=add_random" -N gm_random_cifar -o ../outputs/cifar/baseline/gm_random_cifar/gm_random_cifar.o grow_template_cifar.sh
+
+
+qsub -v "args= --output_dir=outputs/cifar/baseline_vgg/gm_small_baseline_cifar --config=growneuron/cifar/configs/baseline_small_vgg.py " -N gm_small_baseline_cifar_vgg -o ../outputs/cifar/baseline_vgg/gm_small_baseline_cifar/gm_small_baseline_cifar.o grow_template_cifar.sh
+qsub -v "args=  --output_dir=outputs/cifar/baseline_vgg/gm_gradmax_cifar --config=growneuron/cifar/configs/grow_all_at_once_vgg.py --config.grow_type=add_gradmax" -N gm_gradmax_cifar_vgg -o ../outputs/cifar/baseline_vgg/gm_gradmax_cifar/gm_gradmax_cifar.o grow_template_cifar.sh
+qsub -v "args=  --output_dir=outputs/cifar/baseline_vgg/gm_firefly_cifar --config=growneuron/cifar/configs/grow_all_at_once_vgg.py --config.grow_type=add_firefly" -N gm_firefly_cifar_vgg -o ../outputs/cifar/baseline_vgg/gm_firefly_cifar/gm_firefly_cifar.o grow_template_cifar.sh
+qsub -v "args=  --output_dir=outputs/cifar/baseline_vgg/gm_random_cifar --config=growneuron/cifar/configs/grow_all_at_once_vgg.py --config.grow_type=add_random" -N gm_random_cifar_vgg -o ../outputs/cifar/baseline_vgg/gm_random_cifar/gm_random_cifar.o grow_template_cifar.sh
+

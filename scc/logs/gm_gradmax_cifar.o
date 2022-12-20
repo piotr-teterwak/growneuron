@@ -1,0 +1,1171 @@
+Traceback (most recent call last):
+  File "/projectnb/ivc-ml/piotrt/gradmax/growneuron/growneuron/cifar/main.py", line 463, in <module>
+    app.run(main)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/absl/app.py", line 300, in run
+    args = _run_init(
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/absl/app.py", line 369, in _run_init
+    args = _register_and_parse_flags_with_usage(
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/absl/app.py", line 216, in _register_and_parse_flags_with_usage
+    args_to_main = flags_parser(original_argv)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/absl/app.py", line 156, in parse_flags_with_usage
+    return FLAGS(args)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/absl/flags/_flagvalues.py", line 643, in __call__
+    unknown_flags, unparsed_args = self._parse_args(args, known_only)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/absl/flags/_flagvalues.py", line 792, in _parse_args
+    flag.parse(value)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/absl/flags/_flag.py", line 165, in parse
+    self.value = self._parse(argument)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/ml_collections/config_flags/config_flags.py", line 625, in _parse
+    overrides_types = GetTypes(overrides, config)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/ml_collections/config_flags/config_flags.py", line 911, in GetTypes
+    return [GetType(path, config) for path in paths]
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/ml_collections/config_flags/config_flags.py", line 911, in <listcomp>
+    return [GetType(path, config) for path in paths]
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/ml_collections/config_flags/config_flags.py", line 906, in GetType
+    return type(_TakeStep(current, steps[-1]))
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/ml_collections/config_flags/config_flags.py", line 876, in _TakeStep
+    return _AccessConfig(current, field, indices)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/ml_collections/config_flags/config_flags.py", line 849, in _AccessConfig
+    if isinstance(field, string_types) and hasattr(current, field):
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/ml_collections/config_flags/config_flags.py", line 469, in __getattr__
+    self._ReportError()
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/site-packages/ml_collections/config_flags/config_flags.py", line 487, in _ReportError
+    raise IOError('Configuration is not available because of an earlier '
+OSError: Configuration is not available because of an earlier failure to load: Failed loading config file config_config
+  Attempted [Relative path]:
+    growneuron/cifar/configs/grow_all_at_once_resnet_28_5.py
+      [Errno 2] No such file or directory: 'growneuron/cifar/configs/grow_all_at_once_resnet_28_5.py'
+I1018 10:12:42.087199 47349365341952 main.py:97] [main.py:97] Saving checkpoints at /tmp/cifar
+2022-10-18 10:12:42.088366: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-10-18 10:12:43.139720: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11404 MB memory:  -> device: 0, name: NVIDIA TITAN Xp, pci bus id: 0000:1d:00.0, compute capability: 6.1
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0',)
+I1018 10:12:43.150611 47349365341952 mirrored_strategy.py:376] [mirrored_strategy.py:376] Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0',)
+I1018 10:12:43.152162 47349365341952 dataset_info.py:491] [dataset_info.py:491] Load dataset info from /projectnb/ivc-ml/piotrt/data/tfds_imagenet/cifar100/3.0.2
+I1018 10:12:43.156289 47349365341952 dataset_builder.py:383] [dataset_builder.py:383] Reusing dataset cifar100 (/projectnb/ivc-ml/piotrt/data/tfds_imagenet/cifar100/3.0.2)
+I1018 10:12:43.156446 47349365341952 main.py:117] [main.py:117] Steps per epoch 390
+I1018 10:12:43.156501 47349365341952 main.py:118] [main.py:118] Size of the dataset 50000
+I1018 10:12:43.156744 47349365341952 data.py:50] [data.py:50] Global batch size: 128
+I1018 10:12:43.156800 47349365341952 data.py:51] [data.py:51] Per-replica batch size: 128
+I1018 10:12:43.156872 47349365341952 logging_logger.py:44] [logging_logger.py:44] Constructing tf.data.Dataset cifar100 for split train, from /projectnb/ivc-ml/piotrt/data/tfds_imagenet/cifar100/3.0.2
+I1018 10:12:43.206101 47349365341952 data.py:69] [data.py:69] num_input_pipelines: 1
+I1018 10:12:43.357159 47349365341952 data.py:50] [data.py:50] Global batch size: 128
+I1018 10:12:43.357280 47349365341952 data.py:51] [data.py:51] Per-replica batch size: 128
+I1018 10:12:43.357360 47349365341952 logging_logger.py:44] [logging_logger.py:44] Constructing tf.data.Dataset cifar100 for split train, from /projectnb/ivc-ml/piotrt/data/tfds_imagenet/cifar100/3.0.2
+I1018 10:12:43.385174 47349365341952 data.py:69] [data.py:69] num_input_pipelines: 1
+I1018 10:12:43.474953 47349365341952 data.py:50] [data.py:50] Global batch size: 128
+I1018 10:12:43.475059 47349365341952 data.py:51] [data.py:51] Per-replica batch size: 128
+I1018 10:12:43.475129 47349365341952 logging_logger.py:44] [logging_logger.py:44] Constructing tf.data.Dataset cifar100 for split test, from /projectnb/ivc-ml/piotrt/data/tfds_imagenet/cifar100/3.0.2
+I1018 10:12:43.502145 47349365341952 data.py:69] [data.py:69] num_input_pipelines: 1
+I1018 10:12:43.510234 47349365341952 main.py:197] [main.py:197] Building ResNet model
+I1018 10:12:43.870679 47349365341952 main.py:235] [main.py:235] grow_layer_tuples: [[<growneuron.layers.GrowLayer object at 0x2b113b44d3c0>, <keras.layers.core.activation.Activation object at 0x2b113b44d8a0>, <growneuron.layers.GrowLayer object at 0x2b113b44dbd0>], [<growneuron.layers.GrowLayer object at 0x2b113b44ece0>, <keras.layers.core.activation.Activation object at 0x2b113b44f1c0>, <growneuron.layers.GrowLayer object at 0x2b113b44f4f0>], [<growneuron.layers.GrowLayer object at 0x2b113b4e8160>, <keras.layers.core.activation.Activation object at 0x2b113b4e8640>, <growneuron.layers.GrowLayer object at 0x2b113b4e8970>], [<growneuron.layers.GrowLayer object at 0x2b113b4e95a0>, <keras.layers.core.activation.Activation object at 0x2b113b4e9a80>, <growneuron.layers.GrowLayer object at 0x2b113b4e9db0>], [<growneuron.layers.GrowLayer object at 0x2b113b4eb160>, <keras.layers.core.activation.Activation object at 0x2b113b4eb640>, <growneuron.layers.GrowLayer object at 0x2b113b4eb970>], [<growneuron.layers.GrowLayer object at 0x2b113b500af0>, <keras.layers.core.activation.Activation object at 0x2b113b500fd0>, <growneuron.layers.GrowLayer object at 0x2b113b501300>], [<growneuron.layers.GrowLayer object at 0x2b113b501f30>, <keras.layers.core.activation.Activation object at 0x2b113b502410>, <growneuron.layers.GrowLayer object at 0x2b113b502740>], [<growneuron.layers.GrowLayer object at 0x2b113b503370>, <keras.layers.core.activation.Activation object at 0x2b113b503850>, <growneuron.layers.GrowLayer object at 0x2b113b503b80>], [<growneuron.layers.GrowLayer object at 0x2b113b514f70>, <keras.layers.core.activation.Activation object at 0x2b113b515450>, <growneuron.layers.GrowLayer object at 0x2b113b515780>], [<growneuron.layers.GrowLayer object at 0x2b113b516890>, <keras.layers.core.activation.Activation object at 0x2b113b516d70>, <growneuron.layers.GrowLayer object at 0x2b113b5170a0>], [<growneuron.layers.GrowLayer object at 0x2b113b517cd0>, <keras.layers.core.activation.Activation object at 0x2b113b52c1f0>, <growneuron.layers.GrowLayer object at 0x2b113b52c520>], [<growneuron.layers.GrowLayer object at 0x2b113b52d150>, <keras.layers.core.activation.Activation object at 0x2b113b52d630>, <growneuron.layers.GrowLayer object at 0x2b113b52d960>]]
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.873280 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.874523 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.876541 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.877174 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.878794 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.879376 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.880992 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.881543 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.883227 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:43.883784 47349365341952 cross_device_ops.py:619] [cross_device_ops.py:619] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I1018 10:12:44.537604 47349365341952 main.py:242] [main.py:242] Model input shape: (None, 32, 32, 3)
+I1018 10:12:44.538042 47349365341952 main.py:243] [main.py:243] Model output shape: (None, 100)
+I1018 10:12:44.540825 47349365341952 main.py:244] [main.py:244] Model number of weights: 9390036
+I1018 10:12:44.797373 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 0
+2022-10-18 10:12:51.457778: I tensorflow/stream_executor/cuda/cuda_dnn.cc:366] Loaded cuDNN version 8401
+I1018 10:12:56.688964 47349365341952 main.py:360] [main.py:360] Train Loss: 8.5081, Accuracy: 0.00%
+I1018 10:13:20.122508 47349365341952 main.py:360] [main.py:360] Train Loss: 7.3493, Accuracy: 9.19%
+I1018 10:13:42.488848 47349365341952 main.py:426] [main.py:426] 1.0% completion: epoch 1/100. 6.8 steps/s. ETA: 95 min. Time elapsed: 1 min
+I1018 10:13:42.571825 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 0
+I1018 10:13:45.582495 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:13:45.611306 47349365341952 main.py:437] [main.py:437] Test NLL: 3.9560, Accuracy: 12.58%
+I1018 10:13:45.620452 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 1
+I1018 10:13:49.769010 47349365341952 main.py:360] [main.py:360] Train Loss: 6.3540, Accuracy: 16.82%
+I1018 10:14:13.487967 47349365341952 main.py:360] [main.py:360] Train Loss: 5.5484, Accuracy: 24.60%
+I1018 10:14:35.010344 47349365341952 main.py:426] [main.py:426] 2.0% completion: epoch 2/100. 7.1 steps/s. ETA: 90 min. Time elapsed: 2 min
+I1018 10:14:35.088776 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 1
+I1018 10:14:38.224857 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:14:38.256652 47349365341952 main.py:437] [main.py:437] Test NLL: 2.9894, Accuracy: 24.55%
+I1018 10:14:38.265842 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 2
+I1018 10:14:42.666308 47349365341952 main.py:360] [main.py:360] Train Loss: 4.9759, Accuracy: 29.50%
+I1018 10:15:07.668543 47349365341952 main.py:360] [main.py:360] Train Loss: 4.4789, Accuracy: 33.99%
+I1018 10:15:28.138870 47349365341952 main.py:426] [main.py:426] 3.0% completion: epoch 3/100. 7.2 steps/s. ETA: 88 min. Time elapsed: 3 min
+I1018 10:15:28.208606 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 2
+I1018 10:15:31.466791 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:15:31.497465 47349365341952 main.py:437] [main.py:437] Test NLL: 3.2893, Accuracy: 26.62%
+I1018 10:15:31.506240 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 3
+I1018 10:15:38.217512 47349365341952 main.py:360] [main.py:360] Train Loss: 4.1044, Accuracy: 37.64%
+I1018 10:16:02.600349 47349365341952 main.py:360] [main.py:360] Train Loss: 3.7826, Accuracy: 39.98%
+I1018 10:16:22.529568 47349365341952 main.py:426] [main.py:426] 4.0% completion: epoch 4/100. 7.2 steps/s. ETA: 87 min. Time elapsed: 4 min
+I1018 10:16:22.601918 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 3
+I1018 10:16:26.823079 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:16:26.855293 47349365341952 main.py:437] [main.py:437] Test NLL: 2.3578, Accuracy: 38.24%
+I1018 10:16:26.863627 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 4
+I1018 10:16:34.673055 47349365341952 main.py:360] [main.py:360] Train Loss: 3.5141, Accuracy: 43.58%
+I1018 10:16:59.717533 47349365341952 main.py:360] [main.py:360] Train Loss: 3.2794, Accuracy: 45.71%
+I1018 10:17:18.266265 47349365341952 main.py:426] [main.py:426] 5.0% completion: epoch 5/100. 7.1 steps/s. ETA: 87 min. Time elapsed: 5 min
+I1018 10:17:18.337428 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 4
+I1018 10:17:22.589908 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:17:22.622178 47349365341952 main.py:437] [main.py:437] Test NLL: 2.6552, Accuracy: 33.39%
+I1018 10:17:22.630697 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 5
+I1018 10:17:31.858732 47349365341952 main.py:360] [main.py:360] Train Loss: 3.1077, Accuracy: 47.25%
+I1018 10:17:56.759850 47349365341952 main.py:360] [main.py:360] Train Loss: 2.9243, Accuracy: 49.37%
+I1018 10:18:14.035442 47349365341952 main.py:426] [main.py:426] 6.0% completion: epoch 6/100. 7.1 steps/s. ETA: 86 min. Time elapsed: 5 min
+I1018 10:18:14.103036 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 5
+I1018 10:18:18.386621 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:18:18.418694 47349365341952 main.py:437] [main.py:437] Test NLL: 2.3015, Accuracy: 41.37%
+I1018 10:18:18.428139 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 6
+I1018 10:18:29.043842 47349365341952 main.py:360] [main.py:360] Train Loss: 2.7996, Accuracy: 50.72%
+I1018 10:18:53.797186 47349365341952 main.py:360] [main.py:360] Train Loss: 2.6746, Accuracy: 52.58%
+I1018 10:19:10.154616 47349365341952 main.py:426] [main.py:426] 7.0% completion: epoch 7/100. 7.1 steps/s. ETA: 85 min. Time elapsed: 6 min
+I1018 10:19:10.234537 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 6
+I1018 10:19:13.511674 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:19:13.541241 47349365341952 main.py:437] [main.py:437] Test NLL: 2.0466, Accuracy: 46.01%
+I1018 10:19:13.550628 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 7
+I1018 10:19:25.456851 47349365341952 main.py:360] [main.py:360] Train Loss: 2.5738, Accuracy: 53.82%
+I1018 10:19:50.262436 47349365341952 main.py:360] [main.py:360] Train Loss: 2.4833, Accuracy: 55.00%
+I1018 10:20:05.134220 47349365341952 main.py:426] [main.py:426] 8.0% completion: epoch 8/100. 7.1 steps/s. ETA: 84 min. Time elapsed: 7 min
+I1018 10:20:05.196166 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 7
+I1018 10:20:09.452775 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:20:09.484143 47349365341952 main.py:437] [main.py:437] Test NLL: 2.1908, Accuracy: 42.44%
+I1018 10:20:09.493520 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 8
+I1018 10:20:22.794985 47349365341952 main.py:360] [main.py:360] Train Loss: 2.4197, Accuracy: 55.95%
+I1018 10:20:47.933989 47349365341952 main.py:360] [main.py:360] Train Loss: 2.3489, Accuracy: 56.97%
+I1018 10:21:01.660134 47349365341952 main.py:426] [main.py:426] 9.0% completion: epoch 9/100. 7.1 steps/s. ETA: 84 min. Time elapsed: 8 min
+I1018 10:21:01.744400 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 8
+I1018 10:21:05.013110 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:21:05.044527 47349365341952 main.py:437] [main.py:437] Test NLL: 3.3542, Accuracy: 29.82%
+I1018 10:21:05.053578 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 9
+I1018 10:21:18.721407 47349365341952 main.py:360] [main.py:360] Train Loss: 2.2720, Accuracy: 58.46%
+I1018 10:21:43.741297 47349365341952 main.py:360] [main.py:360] Train Loss: 2.2486, Accuracy: 58.68%
+I1018 10:21:56.368316 47349365341952 main.py:426] [main.py:426] 10.0% completion: epoch 10/100. 7.1 steps/s. ETA: 83 min. Time elapsed: 9 min
+I1018 10:21:56.438862 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 9
+I1018 10:22:00.689902 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:22:00.722867 47349365341952 main.py:437] [main.py:437] Test NLL: 1.8804, Accuracy: 50.04%
+I1018 10:22:00.731685 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 10
+I1018 10:22:15.786854 47349365341952 main.py:360] [main.py:360] Train Loss: 2.1798, Accuracy: 60.13%
+I1018 10:22:41.387873 47349365341952 main.py:360] [main.py:360] Train Loss: 2.1597, Accuracy: 60.21%
+I1018 10:22:52.943233 47349365341952 main.py:426] [main.py:426] 11.0% completion: epoch 11/100. 7.1 steps/s. ETA: 82 min. Time elapsed: 10 min
+I1018 10:22:53.011240 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 10
+I1018 10:22:57.266373 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:22:57.298759 47349365341952 main.py:437] [main.py:437] Test NLL: 2.0840, Accuracy: 45.80%
+I1018 10:22:57.307748 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 11
+I1018 10:23:13.562918 47349365341952 main.py:360] [main.py:360] Train Loss: 2.1150, Accuracy: 61.29%
+I1018 10:23:39.460983 47349365341952 main.py:360] [main.py:360] Train Loss: 2.0974, Accuracy: 61.68%
+I1018 10:23:49.294035 47349365341952 main.py:426] [main.py:426] 12.0% completion: epoch 12/100. 7.0 steps/s. ETA: 81 min. Time elapsed: 11 min
+I1018 10:23:49.374051 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 11
+I1018 10:23:53.638061 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:23:53.670213 47349365341952 main.py:437] [main.py:437] Test NLL: 1.9196, Accuracy: 49.89%
+I1018 10:23:53.678974 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 12
+I1018 10:24:10.664801 47349365341952 main.py:360] [main.py:360] Train Loss: 2.0549, Accuracy: 63.17%
+I1018 10:24:36.102047 47349365341952 main.py:360] [main.py:360] Train Loss: 2.0452, Accuracy: 63.02%
+I1018 10:24:44.796331 47349365341952 main.py:426] [main.py:426] 13.0% completion: epoch 13/100. 7.0 steps/s. ETA: 80 min. Time elapsed: 12 min
+I1018 10:24:44.866055 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 12
+I1018 10:24:48.108183 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:24:48.139604 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6434, Accuracy: 53.96%
+I1018 10:24:48.148186 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 13
+I1018 10:25:06.595859 47349365341952 main.py:360] [main.py:360] Train Loss: 2.0141, Accuracy: 64.06%
+I1018 10:25:32.159118 47349365341952 main.py:360] [main.py:360] Train Loss: 2.0099, Accuracy: 64.22%
+I1018 10:25:39.377730 47349365341952 main.py:426] [main.py:426] 14.0% completion: epoch 14/100. 7.0 steps/s. ETA: 79 min. Time elapsed: 13 min
+I1018 10:25:39.456433 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 13
+I1018 10:25:42.653534 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:25:42.684376 47349365341952 main.py:437] [main.py:437] Test NLL: 1.9897, Accuracy: 48.80%
+I1018 10:25:42.692967 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 14
+I1018 10:26:03.593387 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9598, Accuracy: 65.65%
+I1018 10:26:28.496676 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9903, Accuracy: 64.93%
+I1018 10:26:34.817126 47349365341952 main.py:426] [main.py:426] 15.0% completion: epoch 15/100. 7.0 steps/s. ETA: 78 min. Time elapsed: 14 min
+I1018 10:26:34.883483 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 14
+I1018 10:26:39.177439 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:26:39.206875 47349365341952 main.py:437] [main.py:437] Test NLL: 1.8338, Accuracy: 52.03%
+I1018 10:26:39.215672 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 15
+I1018 10:27:00.498613 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9465, Accuracy: 66.20%
+I1018 10:27:25.700966 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9626, Accuracy: 65.60%
+I1018 10:27:30.857563 47349365341952 main.py:426] [main.py:426] 16.0% completion: epoch 16/100. 7.0 steps/s. ETA: 78 min. Time elapsed: 15 min
+I1018 10:27:30.934426 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 15
+I1018 10:27:34.135923 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:27:34.163553 47349365341952 main.py:437] [main.py:437] Test NLL: 1.8576, Accuracy: 52.25%
+I1018 10:27:34.173220 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 16
+I1018 10:27:57.478085 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9102, Accuracy: 67.66%
+I1018 10:28:22.995776 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9416, Accuracy: 66.69%
+I1018 10:28:26.695931 47349365341952 main.py:426] [main.py:426] 17.0% completion: epoch 17/100. 7.0 steps/s. ETA: 77 min. Time elapsed: 16 min
+I1018 10:28:26.763605 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 16
+I1018 10:28:30.903056 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:28:30.935193 47349365341952 main.py:437] [main.py:437] Test NLL: 1.7594, Accuracy: 52.36%
+I1018 10:28:30.944341 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 17
+I1018 10:28:54.750525 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8907, Accuracy: 68.11%
+I1018 10:29:20.158673 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9267, Accuracy: 67.47%
+I1018 10:29:22.716113 47349365341952 main.py:426] [main.py:426] 18.0% completion: epoch 18/100. 7.0 steps/s. ETA: 76 min. Time elapsed: 17 min
+I1018 10:29:22.782402 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 17
+I1018 10:29:27.277254 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:29:27.308124 47349365341952 main.py:437] [main.py:437] Test NLL: 2.0655, Accuracy: 46.52%
+I1018 10:29:27.317490 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 18
+I1018 10:29:52.179286 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8629, Accuracy: 68.99%
+I1018 10:30:17.563157 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9036, Accuracy: 68.30%
+I1018 10:30:18.732747 47349365341952 main.py:426] [main.py:426] 19.0% completion: epoch 19/100. 7.0 steps/s. ETA: 75 min. Time elapsed: 18 min
+I1018 10:30:18.797682 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 18
+I1018 10:30:23.047587 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:30:23.080164 47349365341952 main.py:437] [main.py:437] Test NLL: 1.5512, Accuracy: 58.18%
+I1018 10:30:23.090927 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 19
+I1018 10:30:37.487178 47349365341952 main.py:342] [main.py:342] Growing on iteration: 7500
+WARNING:tensorflow:Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+W1018 10:30:38.420477 47349365341952 mirrored_run.py:89] [mirrored_run.py:89] Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+WARNING:tensorflow:Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+W1018 10:30:39.094464 47349365341952 mirrored_run.py:89] [mirrored_run.py:89] Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+WARNING:tensorflow:Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+W1018 10:30:41.231360 47349365341952 mirrored_run.py:89] [mirrored_run.py:89] Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+WARNING:tensorflow:Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+W1018 10:30:41.998056 47349365341952 mirrored_run.py:89] [mirrored_run.py:89] Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+WARNING:tensorflow:Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+W1018 10:30:42.437237 47349365341952 mirrored_run.py:89] [mirrored_run.py:89] Using MirroredStrategy eagerly has significant overhead currently. We will be working on improving this in the future, but for now please wrap `call_for_each_replica` or `experimental_run` or `run` inside a tf.function to get the best performance.
+I1018 10:31:01.155725 47349365341952 main.py:349] [main.py:349] Model number of weights: 11652276
+I1018 10:31:01.156001 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 10:31:01.174628 47349365341952 main.py:353] [main.py:353] conv2d_1: 50
+I1018 10:31:01.175836 47349365341952 main.py:353] [main.py:353] conv2d_4: 50
+I1018 10:31:01.176539 47349365341952 main.py:353] [main.py:353] conv2d_6: 50
+I1018 10:31:01.177205 47349365341952 main.py:353] [main.py:353] conv2d_8: 50
+I1018 10:31:01.177855 47349365341952 main.py:353] [main.py:353] conv2d_10: 100
+I1018 10:31:01.178564 47349365341952 main.py:353] [main.py:353] conv2d_13: 100
+I1018 10:31:01.179218 47349365341952 main.py:353] [main.py:353] conv2d_15: 100
+I1018 10:31:01.179864 47349365341952 main.py:353] [main.py:353] conv2d_17: 100
+I1018 10:31:01.180502 47349365341952 main.py:353] [main.py:353] conv2d_19: 200
+I1018 10:31:01.181213 47349365341952 main.py:353] [main.py:353] conv2d_22: 200
+I1018 10:31:01.181865 47349365341952 main.py:353] [main.py:353] conv2d_24: 200
+I1018 10:31:01.182586 47349365341952 main.py:353] [main.py:353] conv2d_26: 200
+I1018 10:31:04.210680 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8387, Accuracy: 70.22%
+I1018 10:31:17.328378 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8790, Accuracy: 69.35%
+I1018 10:31:44.555065 47349365341952 main.py:426] [main.py:426] 20.0% completion: epoch 20/100. 6.8 steps/s. ETA: 76 min. Time elapsed: 19 min
+I1018 10:31:44.626521 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 19
+I1018 10:31:49.227948 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:31:49.262435 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6222, Accuracy: 56.82%
+I1018 10:31:49.271596 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 20
+I1018 10:31:52.322036 47349365341952 main.py:360] [main.py:360] Train Loss: 1.9065, Accuracy: 68.77%
+I1018 10:32:19.887254 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8314, Accuracy: 71.11%
+I1018 10:32:46.148121 47349365341952 main.py:426] [main.py:426] 21.0% completion: epoch 21/100. 6.8 steps/s. ETA: 75 min. Time elapsed: 20 min
+I1018 10:32:46.227569 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 20
+I1018 10:32:50.795163 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:32:50.826874 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6775, Accuracy: 55.56%
+I1018 10:32:50.836874 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 21
+I1018 10:32:55.316132 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8837, Accuracy: 69.80%
+I1018 10:33:22.736927 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8219, Accuracy: 71.25%
+I1018 10:33:48.220090 47349365341952 main.py:426] [main.py:426] 22.0% completion: epoch 22/100. 6.8 steps/s. ETA: 75 min. Time elapsed: 21 min
+I1018 10:33:48.288250 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 21
+I1018 10:33:52.861846 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:33:52.895245 47349365341952 main.py:437] [main.py:437] Test NLL: 1.8588, Accuracy: 52.31%
+I1018 10:33:52.904507 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 22
+I1018 10:33:57.961571 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8756, Accuracy: 70.13%
+I1018 10:34:25.440184 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7962, Accuracy: 72.43%
+I1018 10:34:49.575356 47349365341952 main.py:426] [main.py:426] 23.0% completion: epoch 23/100. 6.8 steps/s. ETA: 74 min. Time elapsed: 22 min
+I1018 10:34:49.651603 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 22
+I1018 10:34:54.245999 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:34:54.280742 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6727, Accuracy: 55.17%
+I1018 10:34:54.290602 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 23
+I1018 10:35:01.429804 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8606, Accuracy: 70.62%
+I1018 10:35:29.085553 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7892, Accuracy: 72.51%
+I1018 10:35:51.165188 47349365341952 main.py:426] [main.py:426] 24.0% completion: epoch 24/100. 6.8 steps/s. ETA: 73 min. Time elapsed: 23 min
+I1018 10:35:51.272722 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 23
+I1018 10:35:55.957638 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:35:55.988734 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6445, Accuracy: 57.44%
+I1018 10:35:55.998944 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 24
+I1018 10:36:04.631982 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8167, Accuracy: 71.96%
+I1018 10:36:33.118783 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7838, Accuracy: 73.17%
+I1018 10:36:54.330923 47349365341952 main.py:426] [main.py:426] 25.0% completion: epoch 25/100. 6.7 steps/s. ETA: 72 min. Time elapsed: 24 min
+I1018 10:36:54.411642 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 24
+I1018 10:36:57.810547 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:36:57.839505 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6141, Accuracy: 56.77%
+I1018 10:36:58.185668 47349365341952 main.py:455] [main.py:455] Saved checkpoint to /tmp/cifar/checkpoint-1
+I1018 10:36:58.185851 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 25
+I1018 10:37:07.076935 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8119, Accuracy: 72.30%
+I1018 10:37:34.539483 47349365341952 main.py:342] [main.py:342] Growing on iteration: 10000
+I1018 10:37:54.064959 47349365341952 main.py:349] [main.py:349] Model number of weights: 13914516
+I1018 10:37:54.065735 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 10:37:54.096585 47349365341952 main.py:353] [main.py:353] conv2d_1: 60
+I1018 10:37:54.098455 47349365341952 main.py:353] [main.py:353] conv2d_4: 60
+I1018 10:37:54.099282 47349365341952 main.py:353] [main.py:353] conv2d_6: 60
+I1018 10:37:54.099995 47349365341952 main.py:353] [main.py:353] conv2d_8: 60
+I1018 10:37:54.100665 47349365341952 main.py:353] [main.py:353] conv2d_10: 120
+I1018 10:37:54.101414 47349365341952 main.py:353] [main.py:353] conv2d_13: 120
+I1018 10:37:54.102113 47349365341952 main.py:353] [main.py:353] conv2d_15: 120
+I1018 10:37:54.102802 47349365341952 main.py:353] [main.py:353] conv2d_17: 120
+I1018 10:37:54.103499 47349365341952 main.py:353] [main.py:353] conv2d_19: 240
+I1018 10:37:54.104281 47349365341952 main.py:353] [main.py:353] conv2d_22: 240
+I1018 10:37:54.104990 47349365341952 main.py:353] [main.py:353] conv2d_24: 240
+I1018 10:37:54.105775 47349365341952 main.py:353] [main.py:353] conv2d_26: 240
+I1018 10:37:57.386975 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7829, Accuracy: 73.11%
+I1018 10:38:17.025533 47349365341952 main.py:426] [main.py:426] 26.0% completion: epoch 26/100. 6.6 steps/s. ETA: 73 min. Time elapsed: 26 min
+I1018 10:38:17.116838 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 25
+I1018 10:38:20.935493 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:38:20.972189 47349365341952 main.py:437] [main.py:437] Test NLL: 1.5928, Accuracy: 57.47%
+I1018 10:38:20.982140 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 26
+I1018 10:38:32.583331 47349365341952 main.py:360] [main.py:360] Train Loss: 1.8013, Accuracy: 73.11%
+I1018 10:39:01.914162 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7795, Accuracy: 73.88%
+I1018 10:39:20.829765 47349365341952 main.py:426] [main.py:426] 27.0% completion: epoch 27/100. 6.6 steps/s. ETA: 72 min. Time elapsed: 27 min
+I1018 10:39:20.911074 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 26
+I1018 10:39:25.707188 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:39:25.743851 47349365341952 main.py:437] [main.py:437] Test NLL: 1.8975, Accuracy: 52.67%
+I1018 10:39:25.752953 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 27
+I1018 10:39:38.015926 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7909, Accuracy: 73.15%
+I1018 10:40:07.294561 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7549, Accuracy: 74.57%
+I1018 10:40:24.614139 47349365341952 main.py:426] [main.py:426] 28.0% completion: epoch 28/100. 6.6 steps/s. ETA: 71 min. Time elapsed: 28 min
+I1018 10:40:24.688641 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 27
+I1018 10:40:29.473541 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:40:29.511835 47349365341952 main.py:437] [main.py:437] Test NLL: 1.5258, Accuracy: 59.29%
+I1018 10:40:29.520878 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 28
+I1018 10:40:44.046987 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7581, Accuracy: 74.44%
+I1018 10:41:13.849379 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7578, Accuracy: 74.54%
+I1018 10:41:29.487120 47349365341952 main.py:426] [main.py:426] 29.0% completion: epoch 29/100. 6.6 steps/s. ETA: 70 min. Time elapsed: 29 min
+I1018 10:41:29.573635 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 28
+I1018 10:41:34.412607 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:41:34.449965 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6123, Accuracy: 57.39%
+I1018 10:41:34.459840 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 29
+I1018 10:41:51.145456 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7220, Accuracy: 75.89%
+I1018 10:42:19.772334 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7305, Accuracy: 75.39%
+I1018 10:42:34.374111 47349365341952 main.py:426] [main.py:426] 30.0% completion: epoch 30/100. 6.5 steps/s. ETA: 70 min. Time elapsed: 30 min
+I1018 10:42:34.478619 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 29
+I1018 10:42:39.335680 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:42:39.372284 47349365341952 main.py:437] [main.py:437] Test NLL: 1.5770, Accuracy: 59.53%
+I1018 10:42:39.381286 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 30
+I1018 10:42:56.572577 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7180, Accuracy: 75.80%
+I1018 10:43:26.376440 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7187, Accuracy: 75.59%
+I1018 10:43:39.003631 47349365341952 main.py:426] [main.py:426] 31.0% completion: epoch 31/100. 6.5 steps/s. ETA: 69 min. Time elapsed: 31 min
+I1018 10:43:39.083364 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 30
+I1018 10:43:43.898747 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:43:43.936610 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4530, Accuracy: 61.80%
+I1018 10:43:43.945777 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 31
+I1018 10:44:03.392179 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7209, Accuracy: 75.74%
+I1018 10:44:32.746495 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6994, Accuracy: 76.38%
+I1018 10:44:44.262475 47349365341952 main.py:426] [main.py:426] 32.0% completion: epoch 32/100. 6.5 steps/s. ETA: 68 min. Time elapsed: 32 min
+I1018 10:44:44.340708 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 31
+I1018 10:44:49.124744 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:44:49.160865 47349365341952 main.py:437] [main.py:437] Test NLL: 1.7036, Accuracy: 54.50%
+I1018 10:44:49.169256 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 32
+I1018 10:44:55.371078 47349365341952 main.py:342] [main.py:342] Growing on iteration: 12500
+I1018 10:45:15.239889 47349365341952 main.py:349] [main.py:349] Model number of weights: 16176756
+I1018 10:45:15.240424 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 10:45:15.265308 47349365341952 main.py:353] [main.py:353] conv2d_1: 70
+I1018 10:45:15.266698 47349365341952 main.py:353] [main.py:353] conv2d_4: 70
+I1018 10:45:15.267421 47349365341952 main.py:353] [main.py:353] conv2d_6: 70
+I1018 10:45:15.268066 47349365341952 main.py:353] [main.py:353] conv2d_8: 70
+I1018 10:45:15.268694 47349365341952 main.py:353] [main.py:353] conv2d_10: 140
+I1018 10:45:15.269407 47349365341952 main.py:353] [main.py:353] conv2d_13: 140
+I1018 10:45:15.270070 47349365341952 main.py:353] [main.py:353] conv2d_15: 140
+I1018 10:45:15.270731 47349365341952 main.py:353] [main.py:353] conv2d_17: 140
+I1018 10:45:15.271362 47349365341952 main.py:353] [main.py:353] conv2d_19: 280
+I1018 10:45:15.272074 47349365341952 main.py:353] [main.py:353] conv2d_22: 280
+I1018 10:45:15.272726 47349365341952 main.py:353] [main.py:353] conv2d_24: 280
+I1018 10:45:15.273414 47349365341952 main.py:353] [main.py:353] conv2d_26: 280
+I1018 10:45:17.388609 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7461, Accuracy: 75.39%
+I1018 10:45:33.505526 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6253, Accuracy: 79.11%
+I1018 10:46:07.636862 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7037, Accuracy: 76.74%
+I1018 10:46:19.607138 47349365341952 main.py:426] [main.py:426] 33.0% completion: epoch 33/100. 6.4 steps/s. ETA: 68 min. Time elapsed: 34 min
+I1018 10:46:19.686683 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 32
+I1018 10:46:25.037033 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:46:25.079273 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4091, Accuracy: 61.79%
+I1018 10:46:25.088449 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 33
+I1018 10:46:50.617390 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6664, Accuracy: 77.60%
+I1018 10:47:25.203410 47349365341952 main.py:360] [main.py:360] Train Loss: 1.7000, Accuracy: 76.58%
+I1018 10:47:35.480576 47349365341952 main.py:426] [main.py:426] 34.0% completion: epoch 34/100. 6.3 steps/s. ETA: 68 min. Time elapsed: 35 min
+I1018 10:47:35.569934 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 33
+I1018 10:47:40.909668 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:47:40.950998 47349365341952 main.py:437] [main.py:437] Test NLL: 1.3730, Accuracy: 63.28%
+I1018 10:47:40.961149 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 34
+I1018 10:48:07.111648 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6608, Accuracy: 77.96%
+I1018 10:48:41.154406 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6748, Accuracy: 77.69%
+I1018 10:48:49.576435 47349365341952 main.py:426] [main.py:426] 35.0% completion: epoch 35/100. 6.3 steps/s. ETA: 67 min. Time elapsed: 36 min
+I1018 10:48:49.649925 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 34
+I1018 10:48:53.983449 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:48:54.028290 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6881, Accuracy: 57.19%
+I1018 10:48:54.037027 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 35
+I1018 10:49:23.450890 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6234, Accuracy: 78.99%
+I1018 10:49:57.055215 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6614, Accuracy: 77.70%
+I1018 10:50:03.818883 47349365341952 main.py:426] [main.py:426] 36.0% completion: epoch 36/100. 6.3 steps/s. ETA: 66 min. Time elapsed: 37 min
+I1018 10:50:03.892389 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 35
+I1018 10:50:09.217219 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:50:09.261562 47349365341952 main.py:437] [main.py:437] Test NLL: 1.5450, Accuracy: 60.07%
+I1018 10:50:09.270675 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 36
+I1018 10:50:38.712915 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6110, Accuracy: 79.24%
+I1018 10:51:13.071946 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6452, Accuracy: 78.15%
+I1018 10:51:17.999812 47349365341952 main.py:426] [main.py:426] 37.0% completion: epoch 37/100. 6.2 steps/s. ETA: 66 min. Time elapsed: 39 min
+I1018 10:51:18.070152 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 36
+I1018 10:51:22.366903 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:51:22.410611 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4687, Accuracy: 61.23%
+I1018 10:51:22.419226 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 37
+I1018 10:51:55.387627 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6015, Accuracy: 79.71%
+I1018 10:52:30.125985 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6304, Accuracy: 78.79%
+I1018 10:52:33.245509 47349365341952 main.py:426] [main.py:426] 38.0% completion: epoch 38/100. 6.2 steps/s. ETA: 65 min. Time elapsed: 40 min
+I1018 10:52:33.323667 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 37
+I1018 10:52:38.670760 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:52:38.715559 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4648, Accuracy: 62.02%
+I1018 10:52:38.724124 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 38
+I1018 10:53:12.053465 47349365341952 main.py:342] [main.py:342] Growing on iteration: 15000
+I1018 10:53:30.546944 47349365341952 main.py:349] [main.py:349] Model number of weights: 18438996
+I1018 10:53:30.547293 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 10:53:30.573946 47349365341952 main.py:353] [main.py:353] conv2d_1: 80
+I1018 10:53:30.575340 47349365341952 main.py:353] [main.py:353] conv2d_4: 80
+I1018 10:53:30.576067 47349365341952 main.py:353] [main.py:353] conv2d_6: 80
+I1018 10:53:30.576732 47349365341952 main.py:353] [main.py:353] conv2d_8: 80
+I1018 10:53:30.577378 47349365341952 main.py:353] [main.py:353] conv2d_10: 160
+I1018 10:53:30.578105 47349365341952 main.py:353] [main.py:353] conv2d_13: 160
+I1018 10:53:30.578756 47349365341952 main.py:353] [main.py:353] conv2d_15: 160
+I1018 10:53:30.579400 47349365341952 main.py:353] [main.py:353] conv2d_17: 160
+I1018 10:53:30.580053 47349365341952 main.py:353] [main.py:353] conv2d_19: 320
+I1018 10:53:30.580768 47349365341952 main.py:353] [main.py:353] conv2d_22: 320
+I1018 10:53:30.581411 47349365341952 main.py:353] [main.py:353] conv2d_24: 320
+I1018 10:53:30.582139 47349365341952 main.py:353] [main.py:353] conv2d_26: 320
+I1018 10:53:34.038877 47349365341952 main.py:360] [main.py:360] Train Loss: 1.5686, Accuracy: 80.67%
+I1018 10:54:09.147488 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6261, Accuracy: 78.96%
+I1018 10:54:10.774178 47349365341952 main.py:426] [main.py:426] 39.0% completion: epoch 39/100. 6.1 steps/s. ETA: 65 min. Time elapsed: 41 min
+I1018 10:54:10.851950 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 38
+I1018 10:54:15.299787 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:54:15.344127 47349365341952 main.py:437] [main.py:437] Test NLL: 1.6095, Accuracy: 59.35%
+I1018 10:54:15.353227 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 39
+I1018 10:54:52.597576 47349365341952 main.py:360] [main.py:360] Train Loss: 1.5698, Accuracy: 80.41%
+I1018 10:55:28.287513 47349365341952 main.py:426] [main.py:426] 40.0% completion: epoch 40/100. 6.1 steps/s. ETA: 64 min. Time elapsed: 43 min
+I1018 10:55:28.369230 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 39
+I1018 10:55:33.856822 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:55:33.898539 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4545, Accuracy: 61.87%
+I1018 10:55:33.907695 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 40
+I1018 10:55:37.194561 47349365341952 main.py:360] [main.py:360] Train Loss: 1.6021, Accuracy: 79.68%
+I1018 10:56:13.169244 47349365341952 main.py:360] [main.py:360] Train Loss: 1.5353, Accuracy: 81.76%
+I1018 10:56:47.230727 47349365341952 main.py:426] [main.py:426] 41.0% completion: epoch 41/100. 6.1 steps/s. ETA: 63 min. Time elapsed: 44 min
+I1018 10:56:47.300123 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 40
+I1018 10:56:51.752049 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:56:51.799510 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4047, Accuracy: 63.21%
+I1018 10:56:51.808441 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 41
+I1018 10:56:55.852851 47349365341952 main.py:360] [main.py:360] Train Loss: 1.5907, Accuracy: 79.86%
+I1018 10:57:31.840709 47349365341952 main.py:360] [main.py:360] Train Loss: 1.5084, Accuracy: 82.66%
+I1018 10:58:04.147878 47349365341952 main.py:426] [main.py:426] 42.0% completion: epoch 42/100. 6.0 steps/s. ETA: 63 min. Time elapsed: 45 min
+I1018 10:58:04.217164 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 41
+I1018 10:58:09.646021 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:58:09.691224 47349365341952 main.py:437] [main.py:437] Test NLL: 1.5638, Accuracy: 60.28%
+I1018 10:58:09.700835 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 42
+I1018 10:58:16.535638 47349365341952 main.py:360] [main.py:360] Train Loss: 1.5605, Accuracy: 80.62%
+I1018 10:58:52.681493 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4735, Accuracy: 83.46%
+I1018 10:59:22.663511 47349365341952 main.py:426] [main.py:426] 43.0% completion: epoch 43/100. 6.0 steps/s. ETA: 62 min. Time elapsed: 47 min
+I1018 10:59:22.738274 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 42
+I1018 10:59:27.213324 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 10:59:27.258448 47349365341952 main.py:437] [main.py:437] Test NLL: 1.5265, Accuracy: 63.06%
+I1018 10:59:27.267896 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 43
+I1018 10:59:34.905467 47349365341952 main.py:360] [main.py:360] Train Loss: 1.5733, Accuracy: 79.98%
+I1018 11:00:10.579589 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4630, Accuracy: 83.41%
+I1018 11:00:39.300600 47349365341952 main.py:426] [main.py:426] 44.0% completion: epoch 44/100. 6.0 steps/s. ETA: 61 min. Time elapsed: 48 min
+I1018 11:00:39.376882 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 43
+I1018 11:00:43.833522 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:00:43.880436 47349365341952 main.py:437] [main.py:437] Test NLL: 1.5488, Accuracy: 60.62%
+I1018 11:00:43.889620 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 44
+I1018 11:00:52.687040 47349365341952 main.py:360] [main.py:360] Train Loss: 1.5391, Accuracy: 81.15%
+I1018 11:01:28.635036 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4483, Accuracy: 84.11%
+I1018 11:01:46.556366 47349365341952 main.py:342] [main.py:342] Growing on iteration: 17500
+I1018 11:02:05.555836 47349365341952 main.py:349] [main.py:349] Model number of weights: 20701236
+I1018 11:02:05.556275 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 11:02:05.580244 47349365341952 main.py:353] [main.py:353] conv2d_1: 90
+I1018 11:02:05.581456 47349365341952 main.py:353] [main.py:353] conv2d_4: 90
+I1018 11:02:05.582183 47349365341952 main.py:353] [main.py:353] conv2d_6: 90
+I1018 11:02:05.582858 47349365341952 main.py:353] [main.py:353] conv2d_8: 90
+I1018 11:02:05.583509 47349365341952 main.py:353] [main.py:353] conv2d_10: 180
+I1018 11:02:05.584230 47349365341952 main.py:353] [main.py:353] conv2d_13: 180
+I1018 11:02:05.584889 47349365341952 main.py:353] [main.py:353] conv2d_15: 180
+I1018 11:02:05.585545 47349365341952 main.py:353] [main.py:353] conv2d_17: 180
+I1018 11:02:05.586198 47349365341952 main.py:353] [main.py:353] conv2d_19: 360
+I1018 11:02:05.586916 47349365341952 main.py:353] [main.py:353] conv2d_22: 360
+I1018 11:02:05.587562 47349365341952 main.py:353] [main.py:353] conv2d_24: 360
+I1018 11:02:05.588290 47349365341952 main.py:353] [main.py:353] conv2d_26: 360
+I1018 11:02:07.774731 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4824, Accuracy: 82.66%
+I1018 11:02:16.526904 47349365341952 main.py:426] [main.py:426] 45.0% completion: epoch 45/100. 5.9 steps/s. ETA: 61 min. Time elapsed: 50 min
+I1018 11:02:16.598235 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 44
+I1018 11:02:22.353105 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:02:22.404526 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4007, Accuracy: 64.02%
+I1018 11:02:22.413633 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 45
+I1018 11:02:35.036273 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4976, Accuracy: 82.22%
+I1018 11:03:12.762652 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4413, Accuracy: 84.02%
+I1018 11:03:39.316820 47349365341952 main.py:426] [main.py:426] 46.0% completion: epoch 46/100. 5.9 steps/s. ETA: 60 min. Time elapsed: 51 min
+I1018 11:03:39.401535 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 45
+I1018 11:03:44.186769 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:03:44.237619 47349365341952 main.py:437] [main.py:437] Test NLL: 1.3585, Accuracy: 64.42%
+I1018 11:03:44.246903 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 46
+I1018 11:03:58.924885 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4966, Accuracy: 82.48%
+I1018 11:04:36.807459 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4008, Accuracy: 85.18%
+I1018 11:05:01.396447 47349365341952 main.py:426] [main.py:426] 47.0% completion: epoch 47/100. 5.8 steps/s. ETA: 59 min. Time elapsed: 52 min
+I1018 11:05:01.480134 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 46
+I1018 11:05:07.302607 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:05:07.349434 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4705, Accuracy: 63.09%
+I1018 11:05:07.358721 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 47
+I1018 11:05:24.416990 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4556, Accuracy: 83.49%
+I1018 11:06:02.705238 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4033, Accuracy: 85.13%
+I1018 11:06:25.622122 47349365341952 main.py:426] [main.py:426] 48.0% completion: epoch 48/100. 5.8 steps/s. ETA: 58 min. Time elapsed: 54 min
+I1018 11:06:25.707615 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 47
+I1018 11:06:31.508362 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:06:31.558790 47349365341952 main.py:437] [main.py:437] Test NLL: 1.3251, Accuracy: 65.56%
+I1018 11:06:31.568185 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 48
+I1018 11:06:49.640048 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4190, Accuracy: 84.48%
+I1018 11:07:27.728514 47349365341952 main.py:360] [main.py:360] Train Loss: 1.3650, Accuracy: 85.77%
+I1018 11:07:48.541436 47349365341952 main.py:426] [main.py:426] 49.0% completion: epoch 49/100. 5.8 steps/s. ETA: 57 min. Time elapsed: 55 min
+I1018 11:07:48.614314 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 48
+I1018 11:07:53.403841 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:07:53.450886 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4161, Accuracy: 64.33%
+I1018 11:07:53.459685 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 49
+I1018 11:08:14.064391 47349365341952 main.py:360] [main.py:360] Train Loss: 1.4151, Accuracy: 84.28%
+I1018 11:08:52.481812 47349365341952 main.py:360] [main.py:360] Train Loss: 1.3513, Accuracy: 85.86%
+I1018 11:09:11.639951 47349365341952 main.py:426] [main.py:426] 50.0% completion: epoch 50/100. 5.8 steps/s. ETA: 56 min. Time elapsed: 56 min
+I1018 11:09:11.714418 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 49
+I1018 11:09:16.439323 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:09:16.486968 47349365341952 main.py:437] [main.py:437] Test NLL: 1.3981, Accuracy: 64.31%
+I1018 11:09:17.115156 47349365341952 main.py:455] [main.py:455] Saved checkpoint to /tmp/cifar/checkpoint-2
+I1018 11:09:17.115297 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 50
+I1018 11:09:38.380754 47349365341952 main.py:360] [main.py:360] Train Loss: 1.3584, Accuracy: 85.81%
+I1018 11:10:16.184643 47349365341952 main.py:360] [main.py:360] Train Loss: 1.3375, Accuracy: 86.23%
+I1018 11:10:33.074926 47349365341952 main.py:426] [main.py:426] 51.0% completion: epoch 51/100. 5.7 steps/s. ETA: 56 min. Time elapsed: 58 min
+I1018 11:10:33.151753 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 50
+I1018 11:10:37.979275 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:10:38.027225 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4034, Accuracy: 64.92%
+I1018 11:10:38.036806 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 51
+I1018 11:11:02.262468 47349365341952 main.py:342] [main.py:342] Growing on iteration: 20000
+I1018 11:11:21.640922 47349365341952 main.py:349] [main.py:349] Model number of weights: 22963476
+I1018 11:11:21.641219 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 11:11:21.669753 47349365341952 main.py:353] [main.py:353] conv2d_1: 100
+I1018 11:11:21.670827 47349365341952 main.py:353] [main.py:353] conv2d_4: 100
+I1018 11:11:21.671549 47349365341952 main.py:353] [main.py:353] conv2d_6: 100
+I1018 11:11:21.672216 47349365341952 main.py:353] [main.py:353] conv2d_8: 100
+I1018 11:11:21.672874 47349365341952 main.py:353] [main.py:353] conv2d_10: 200
+I1018 11:11:21.673518 47349365341952 main.py:353] [main.py:353] conv2d_13: 200
+I1018 11:11:21.674175 47349365341952 main.py:353] [main.py:353] conv2d_15: 200
+I1018 11:11:21.674825 47349365341952 main.py:353] [main.py:353] conv2d_17: 200
+I1018 11:11:21.675470 47349365341952 main.py:353] [main.py:353] conv2d_19: 400
+I1018 11:11:21.676205 47349365341952 main.py:353] [main.py:353] conv2d_22: 400
+I1018 11:11:21.676862 47349365341952 main.py:353] [main.py:353] conv2d_24: 400
+I1018 11:11:21.677574 47349365341952 main.py:353] [main.py:353] conv2d_26: 400
+I1018 11:11:24.032449 47349365341952 main.py:360] [main.py:360] Train Loss: 1.3230, Accuracy: 86.64%
+I1018 11:12:04.836737 47349365341952 main.py:360] [main.py:360] Train Loss: 1.2965, Accuracy: 87.32%
+I1018 11:12:21.088506 47349365341952 main.py:426] [main.py:426] 52.0% completion: epoch 52/100. 5.7 steps/s. ETA: 55 min. Time elapsed: 60 min
+I1018 11:12:21.160224 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 51
+I1018 11:12:26.495086 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:12:26.548439 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4314, Accuracy: 65.43%
+I1018 11:12:26.558461 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 52
+I1018 11:12:54.621046 47349365341952 main.py:360] [main.py:360] Train Loss: 1.3017, Accuracy: 87.13%
+I1018 11:13:35.826247 47349365341952 main.py:360] [main.py:360] Train Loss: 1.2854, Accuracy: 87.39%
+I1018 11:13:50.242111 47349365341952 main.py:426] [main.py:426] 53.0% completion: epoch 53/100. 5.6 steps/s. ETA: 54 min. Time elapsed: 61 min
+I1018 11:13:50.314726 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 52
+I1018 11:13:56.687300 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:13:56.742735 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4421, Accuracy: 64.17%
+I1018 11:13:56.752119 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 53
+I1018 11:14:27.227219 47349365341952 main.py:360] [main.py:360] Train Loss: 1.2640, Accuracy: 88.11%
+I1018 11:15:08.275881 47349365341952 main.py:360] [main.py:360] Train Loss: 1.2554, Accuracy: 87.99%
+I1018 11:15:20.631613 47349365341952 main.py:426] [main.py:426] 54.0% completion: epoch 54/100. 5.6 steps/s. ETA: 53 min. Time elapsed: 63 min
+I1018 11:15:20.707731 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 53
+I1018 11:15:27.043939 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:15:27.099153 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4285, Accuracy: 65.20%
+I1018 11:15:27.108911 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 54
+I1018 11:15:59.331444 47349365341952 main.py:360] [main.py:360] Train Loss: 1.2423, Accuracy: 88.66%
+I1018 11:16:40.344629 47349365341952 main.py:360] [main.py:360] Train Loss: 1.2240, Accuracy: 88.88%
+I1018 11:16:50.447811 47349365341952 main.py:426] [main.py:426] 55.0% completion: epoch 55/100. 5.6 steps/s. ETA: 52 min. Time elapsed: 64 min
+I1018 11:16:50.524833 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 54
+I1018 11:16:55.844293 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:16:55.902589 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2682, Accuracy: 67.59%
+I1018 11:16:55.911657 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 55
+I1018 11:17:29.067212 47349365341952 main.py:360] [main.py:360] Train Loss: 1.2118, Accuracy: 89.05%
+I1018 11:18:10.081864 47349365341952 main.py:360] [main.py:360] Train Loss: 1.2014, Accuracy: 89.39%
+I1018 11:18:18.142303 47349365341952 main.py:426] [main.py:426] 56.0% completion: epoch 56/100. 5.6 steps/s. ETA: 52 min. Time elapsed: 66 min
+I1018 11:18:18.213582 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 55
+I1018 11:18:23.432277 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:18:23.486840 47349365341952 main.py:437] [main.py:437] Test NLL: 1.4387, Accuracy: 64.53%
+I1018 11:18:23.496370 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 56
+I1018 11:18:59.661906 47349365341952 main.py:360] [main.py:360] Train Loss: 1.1720, Accuracy: 90.17%
+I1018 11:19:40.725801 47349365341952 main.py:360] [main.py:360] Train Loss: 1.1758, Accuracy: 89.73%
+I1018 11:19:46.827453 47349365341952 main.py:426] [main.py:426] 57.0% completion: epoch 57/100. 5.5 steps/s. ETA: 51 min. Time elapsed: 67 min
+I1018 11:19:46.900853 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 56
+I1018 11:19:52.085532 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:19:52.142516 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2509, Accuracy: 69.28%
+I1018 11:19:52.152113 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 57
+I1018 11:20:30.575964 47349365341952 main.py:360] [main.py:360] Train Loss: 1.1390, Accuracy: 90.64%
+I1018 11:20:50.894305 47349365341952 main.py:342] [main.py:342] Growing on iteration: 22500
+I1018 11:21:10.461181 47349365341952 main.py:349] [main.py:349] Model number of weights: 25225716
+I1018 11:21:10.461711 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 11:21:10.493059 47349365341952 main.py:353] [main.py:353] conv2d_1: 110
+I1018 11:21:10.494336 47349365341952 main.py:353] [main.py:353] conv2d_4: 110
+I1018 11:21:10.495062 47349365341952 main.py:353] [main.py:353] conv2d_6: 110
+I1018 11:21:10.495720 47349365341952 main.py:353] [main.py:353] conv2d_8: 110
+I1018 11:21:10.496374 47349365341952 main.py:353] [main.py:353] conv2d_10: 220
+I1018 11:21:10.497097 47349365341952 main.py:353] [main.py:353] conv2d_13: 220
+I1018 11:21:10.497758 47349365341952 main.py:353] [main.py:353] conv2d_15: 220
+I1018 11:21:10.498403 47349365341952 main.py:353] [main.py:353] conv2d_17: 220
+I1018 11:21:10.499057 47349365341952 main.py:353] [main.py:353] conv2d_19: 440
+I1018 11:21:10.499771 47349365341952 main.py:353] [main.py:353] conv2d_22: 440
+I1018 11:21:10.500418 47349365341952 main.py:353] [main.py:353] conv2d_24: 440
+I1018 11:21:10.501148 47349365341952 main.py:353] [main.py:353] conv2d_26: 440
+I1018 11:21:12.867878 47349365341952 main.py:360] [main.py:360] Train Loss: 1.1354, Accuracy: 90.52%
+I1018 11:21:33.155989 47349365341952 main.py:360] [main.py:360] Train Loss: 1.1574, Accuracy: 89.80%
+I1018 11:21:37.149863 47349365341952 main.py:426] [main.py:426] 58.0% completion: epoch 58/100. 5.5 steps/s. ETA: 50 min. Time elapsed: 69 min
+I1018 11:21:37.222850 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 57
+I1018 11:21:42.749525 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:21:42.809102 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2618, Accuracy: 68.43%
+I1018 11:21:42.818194 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 58
+I1018 11:22:24.736124 47349365341952 main.py:360] [main.py:360] Train Loss: 1.1025, Accuracy: 91.68%
+I1018 11:23:07.303815 47349365341952 main.py:360] [main.py:360] Train Loss: 1.0992, Accuracy: 91.45%
+I1018 11:23:09.369512 47349365341952 main.py:426] [main.py:426] 59.0% completion: epoch 59/100. 5.4 steps/s. ETA: 49 min. Time elapsed: 70 min
+I1018 11:23:09.457112 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 58
+I1018 11:23:15.977128 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:23:16.030544 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2537, Accuracy: 68.59%
+I1018 11:23:16.040321 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 59
+I1018 11:24:00.399872 47349365341952 main.py:360] [main.py:360] Train Loss: 1.0626, Accuracy: 92.43%
+I1018 11:24:42.651340 47349365341952 main.py:426] [main.py:426] 60.0% completion: epoch 60/100. 5.4 steps/s. ETA: 48 min. Time elapsed: 72 min
+I1018 11:24:42.733975 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 59
+I1018 11:24:48.268199 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:24:48.328928 47349365341952 main.py:437] [main.py:437] Test NLL: 1.1839, Accuracy: 70.46%
+I1018 11:24:48.338577 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 60
+I1018 11:24:51.771817 47349365341952 main.py:360] [main.py:360] Train Loss: 1.0843, Accuracy: 91.35%
+I1018 11:25:33.733223 47349365341952 main.py:360] [main.py:360] Train Loss: 1.0252, Accuracy: 93.32%
+I1018 11:26:15.185409 47349365341952 main.py:426] [main.py:426] 61.0% completion: epoch 61/100. 5.4 steps/s. ETA: 47 min. Time elapsed: 74 min
+I1018 11:26:15.262526 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 60
+I1018 11:26:20.796998 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:26:20.853667 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2482, Accuracy: 69.64%
+I1018 11:26:20.863521 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 61
+I1018 11:26:25.507997 47349365341952 main.py:360] [main.py:360] Train Loss: 1.0375, Accuracy: 92.53%
+I1018 11:27:07.770413 47349365341952 main.py:360] [main.py:360] Train Loss: 0.9871, Accuracy: 93.84%
+I1018 11:27:46.492400 47349365341952 main.py:426] [main.py:426] 62.0% completion: epoch 62/100. 5.4 steps/s. ETA: 46 min. Time elapsed: 75 min
+I1018 11:27:46.567627 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 61
+I1018 11:27:52.087188 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:27:52.138656 47349365341952 main.py:437] [main.py:437] Test NLL: 1.3630, Accuracy: 67.26%
+I1018 11:27:52.148408 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 62
+I1018 11:27:59.958587 47349365341952 main.py:360] [main.py:360] Train Loss: 1.0047, Accuracy: 92.86%
+I1018 11:28:43.793515 47349365341952 main.py:360] [main.py:360] Train Loss: 0.9524, Accuracy: 94.52%
+I1018 11:29:20.125136 47349365341952 main.py:426] [main.py:426] 63.0% completion: epoch 63/100. 5.3 steps/s. ETA: 45 min. Time elapsed: 77 min
+I1018 11:29:20.205485 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 62
+I1018 11:29:25.719019 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:29:25.778291 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2750, Accuracy: 69.46%
+I1018 11:29:25.787352 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 63
+I1018 11:29:35.015637 47349365341952 main.py:360] [main.py:360] Train Loss: 0.9678, Accuracy: 93.61%
+I1018 11:30:17.975248 47349365341952 main.py:360] [main.py:360] Train Loss: 0.9098, Accuracy: 95.30%
+I1018 11:30:52.507268 47349365341952 main.py:426] [main.py:426] 64.0% completion: epoch 64/100. 5.3 steps/s. ETA: 44 min. Time elapsed: 78 min
+I1018 11:30:52.586999 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 63
+I1018 11:30:59.107019 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:30:59.167600 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2243, Accuracy: 70.59%
+I1018 11:30:59.176903 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 64
+I1018 11:31:10.657856 47349365341952 main.py:342] [main.py:342] Growing on iteration: 25000
+I1018 11:31:30.455141 47349365341952 main.py:349] [main.py:349] Model number of weights: 27487956
+I1018 11:31:30.455481 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 11:31:30.482217 47349365341952 main.py:353] [main.py:353] conv2d_1: 120
+I1018 11:31:30.483219 47349365341952 main.py:353] [main.py:353] conv2d_4: 120
+I1018 11:31:30.483898 47349365341952 main.py:353] [main.py:353] conv2d_6: 120
+I1018 11:31:30.484510 47349365341952 main.py:353] [main.py:353] conv2d_8: 120
+I1018 11:31:30.485131 47349365341952 main.py:353] [main.py:353] conv2d_10: 240
+I1018 11:31:30.485746 47349365341952 main.py:353] [main.py:353] conv2d_13: 240
+I1018 11:31:30.486354 47349365341952 main.py:353] [main.py:353] conv2d_15: 240
+I1018 11:31:30.486968 47349365341952 main.py:353] [main.py:353] conv2d_17: 240
+I1018 11:31:30.487573 47349365341952 main.py:353] [main.py:353] conv2d_19: 480
+I1018 11:31:30.488275 47349365341952 main.py:353] [main.py:353] conv2d_22: 480
+I1018 11:31:30.488890 47349365341952 main.py:353] [main.py:353] conv2d_24: 480
+I1018 11:31:30.489547 47349365341952 main.py:353] [main.py:353] conv2d_26: 480
+I1018 11:31:32.836597 47349365341952 main.py:360] [main.py:360] Train Loss: 0.9334, Accuracy: 93.98%
+I1018 11:32:17.782060 47349365341952 main.py:360] [main.py:360] Train Loss: 0.8676, Accuracy: 96.11%
+I1018 11:32:51.875154 47349365341952 main.py:426] [main.py:426] 65.0% completion: epoch 65/100. 5.3 steps/s. ETA: 43 min. Time elapsed: 80 min
+I1018 11:32:52.163614 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 64
+I1018 11:32:57.895239 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:32:57.957633 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2589, Accuracy: 69.78%
+I1018 11:32:57.966870 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 65
+I1018 11:33:11.820709 47349365341952 main.py:360] [main.py:360] Train Loss: 0.8888, Accuracy: 94.93%
+I1018 11:33:57.637236 47349365341952 main.py:360] [main.py:360] Train Loss: 0.8489, Accuracy: 96.03%
+I1018 11:34:29.430772 47349365341952 main.py:426] [main.py:426] 66.0% completion: epoch 66/100. 5.2 steps/s. ETA: 42 min. Time elapsed: 82 min
+I1018 11:34:29.498921 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 65
+I1018 11:34:36.261462 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:34:36.323272 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2521, Accuracy: 70.04%
+I1018 11:34:36.332983 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 66
+I1018 11:34:53.320987 47349365341952 main.py:360] [main.py:360] Train Loss: 0.8518, Accuracy: 95.71%
+I1018 11:35:38.933232 47349365341952 main.py:360] [main.py:360] Train Loss: 0.8032, Accuracy: 96.92%
+I1018 11:36:08.099621 47349365341952 main.py:426] [main.py:426] 67.0% completion: epoch 67/100. 5.2 steps/s. ETA: 41 min. Time elapsed: 83 min
+I1018 11:36:08.175064 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 66
+I1018 11:36:14.907379 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:36:14.968074 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2190, Accuracy: 70.99%
+I1018 11:36:14.977400 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 67
+I1018 11:36:33.441438 47349365341952 main.py:360] [main.py:360] Train Loss: 0.8107, Accuracy: 96.21%
+I1018 11:37:19.067603 47349365341952 main.py:360] [main.py:360] Train Loss: 0.7786, Accuracy: 97.12%
+I1018 11:37:46.346900 47349365341952 main.py:426] [main.py:426] 68.0% completion: epoch 68/100. 5.2 steps/s. ETA: 40 min. Time elapsed: 85 min
+I1018 11:37:46.438100 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 67
+I1018 11:37:52.217287 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:37:52.276917 47349365341952 main.py:437] [main.py:437] Test NLL: 1.2096, Accuracy: 71.21%
+I1018 11:37:52.286342 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 68
+I1018 11:38:13.331448 47349365341952 main.py:360] [main.py:360] Train Loss: 0.7753, Accuracy: 96.81%
+I1018 11:38:58.778431 47349365341952 main.py:360] [main.py:360] Train Loss: 0.7380, Accuracy: 97.68%
+I1018 11:39:23.676616 47349365341952 main.py:426] [main.py:426] 69.0% completion: epoch 69/100. 5.2 steps/s. ETA: 39 min. Time elapsed: 87 min
+I1018 11:39:23.756961 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 68
+I1018 11:39:29.518864 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:39:29.580439 47349365341952 main.py:437] [main.py:437] Test NLL: 1.1823, Accuracy: 72.09%
+I1018 11:39:29.589634 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 69
+I1018 11:39:53.206898 47349365341952 main.py:360] [main.py:360] Train Loss: 0.7454, Accuracy: 97.15%
+I1018 11:40:38.557631 47349365341952 main.py:360] [main.py:360] Train Loss: 0.6973, Accuracy: 98.38%
+I1018 11:41:01.279896 47349365341952 main.py:426] [main.py:426] 70.0% completion: epoch 70/100. 5.2 steps/s. ETA: 38 min. Time elapsed: 88 min
+I1018 11:41:01.356369 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 69
+I1018 11:41:08.106459 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:41:08.165461 47349365341952 main.py:437] [main.py:437] Test NLL: 1.0971, Accuracy: 73.56%
+I1018 11:41:08.175070 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 70
+I1018 11:41:34.593363 47349365341952 main.py:360] [main.py:360] Train Loss: 0.6882, Accuracy: 98.25%
+I1018 11:41:57.069515 47349365341952 main.py:342] [main.py:342] Growing on iteration: 27500
+I1018 11:42:18.039084 47349365341952 main.py:349] [main.py:349] Model number of weights: 29750196
+I1018 11:42:18.039617 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 11:42:18.074777 47349365341952 main.py:353] [main.py:353] conv2d_1: 130
+I1018 11:42:18.076169 47349365341952 main.py:353] [main.py:353] conv2d_4: 130
+I1018 11:42:18.076898 47349365341952 main.py:353] [main.py:353] conv2d_6: 130
+I1018 11:42:18.077563 47349365341952 main.py:353] [main.py:353] conv2d_8: 130
+I1018 11:42:18.078232 47349365341952 main.py:353] [main.py:353] conv2d_10: 260
+I1018 11:42:18.078963 47349365341952 main.py:353] [main.py:353] conv2d_13: 260
+I1018 11:42:18.079613 47349365341952 main.py:353] [main.py:353] conv2d_15: 260
+I1018 11:42:18.080273 47349365341952 main.py:353] [main.py:353] conv2d_17: 260
+I1018 11:42:18.080935 47349365341952 main.py:353] [main.py:353] conv2d_19: 520
+I1018 11:42:18.081642 47349365341952 main.py:353] [main.py:353] conv2d_22: 520
+I1018 11:42:18.082306 47349365341952 main.py:353] [main.py:353] conv2d_24: 520
+I1018 11:42:18.083035 47349365341952 main.py:353] [main.py:353] conv2d_26: 520
+I1018 11:42:21.946171 47349365341952 main.py:360] [main.py:360] Train Loss: 0.6581, Accuracy: 98.95%
+I1018 11:42:45.948185 47349365341952 main.py:360] [main.py:360] Train Loss: 0.6620, Accuracy: 98.78%
+I1018 11:43:08.704415 47349365341952 main.py:426] [main.py:426] 71.0% completion: epoch 71/100. 5.1 steps/s. ETA: 37 min. Time elapsed: 90 min
+I1018 11:43:08.790235 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 70
+I1018 11:43:16.057051 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:43:16.121493 47349365341952 main.py:437] [main.py:437] Test NLL: 1.0822, Accuracy: 74.33%
+I1018 11:43:16.131304 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 71
+I1018 11:43:46.973240 47349365341952 main.py:360] [main.py:360] Train Loss: 0.6451, Accuracy: 98.88%
+I1018 11:44:37.830628 47349365341952 main.py:360] [main.py:360] Train Loss: 0.6224, Accuracy: 99.28%
+I1018 11:44:57.657059 47349365341952 main.py:426] [main.py:426] 72.0% completion: epoch 72/100. 5.1 steps/s. ETA: 36 min. Time elapsed: 92 min
+I1018 11:44:57.742533 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 71
+I1018 11:45:03.972406 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:45:04.041929 47349365341952 main.py:437] [main.py:437] Test NLL: 1.0680, Accuracy: 74.43%
+I1018 11:45:04.051570 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 72
+I1018 11:45:38.314699 47349365341952 main.py:360] [main.py:360] Train Loss: 0.6106, Accuracy: 99.25%
+I1018 11:46:29.063129 47349365341952 main.py:360] [main.py:360] Train Loss: 0.5928, Accuracy: 99.34%
+I1018 11:46:46.370741 47349365341952 main.py:426] [main.py:426] 73.0% completion: epoch 73/100. 5.0 steps/s. ETA: 35 min. Time elapsed: 94 min
+I1018 11:46:46.445790 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 72
+I1018 11:46:53.697953 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:46:53.768115 47349365341952 main.py:437] [main.py:437] Test NLL: 1.0874, Accuracy: 74.26%
+I1018 11:46:53.777208 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 73
+I1018 11:47:30.359039 47349365341952 main.py:360] [main.py:360] Train Loss: 0.5842, Accuracy: 99.32%
+I1018 11:48:20.300028 47349365341952 main.py:360] [main.py:360] Train Loss: 0.5692, Accuracy: 99.48%
+I1018 11:48:35.404911 47349365341952 main.py:426] [main.py:426] 74.0% completion: epoch 74/100. 5.0 steps/s. ETA: 34 min. Time elapsed: 96 min
+I1018 11:48:35.484124 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 73
+I1018 11:48:42.726691 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:48:42.795763 47349365341952 main.py:437] [main.py:437] Test NLL: 1.0571, Accuracy: 74.87%
+I1018 11:48:42.805398 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 74
+I1018 11:49:21.448539 47349365341952 main.py:360] [main.py:360] Train Loss: 0.5598, Accuracy: 99.43%
+I1018 11:50:12.320371 47349365341952 main.py:360] [main.py:360] Train Loss: 0.5431, Accuracy: 99.61%
+I1018 11:50:24.472113 47349365341952 main.py:426] [main.py:426] 75.0% completion: epoch 75/100. 5.0 steps/s. ETA: 33 min. Time elapsed: 98 min
+I1018 11:50:24.550302 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 74
+I1018 11:50:30.815507 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:50:30.880753 47349365341952 main.py:437] [main.py:437] Test NLL: 1.0071, Accuracy: 76.06%
+I1018 11:50:31.779199 47349365341952 main.py:455] [main.py:455] Saved checkpoint to /tmp/cifar/checkpoint-3
+I1018 11:50:31.779337 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 75
+I1018 11:51:11.862194 47349365341952 main.py:360] [main.py:360] Train Loss: 0.5299, Accuracy: 99.67%
+I1018 11:52:02.709077 47349365341952 main.py:360] [main.py:360] Train Loss: 0.5169, Accuracy: 99.78%
+I1018 11:52:12.369803 47349365341952 main.py:426] [main.py:426] 76.0% completion: epoch 76/100. 5.0 steps/s. ETA: 31 min. Time elapsed: 99 min
+I1018 11:52:12.454076 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 75
+I1018 11:52:18.709372 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:52:18.778275 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9837, Accuracy: 76.03%
+I1018 11:52:18.787298 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 76
+I1018 11:53:02.919553 47349365341952 main.py:360] [main.py:360] Train Loss: 0.5044, Accuracy: 99.86%
+I1018 11:53:53.207392 47349365341952 main.py:342] [main.py:342] Growing on iteration: 30000
+I1018 11:54:14.541718 47349365341952 main.py:349] [main.py:349] Model number of weights: 32012436
+I1018 11:54:14.542053 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 11:54:14.572787 47349365341952 main.py:353] [main.py:353] conv2d_1: 140
+I1018 11:54:14.573838 47349365341952 main.py:353] [main.py:353] conv2d_4: 140
+I1018 11:54:14.574546 47349365341952 main.py:353] [main.py:353] conv2d_6: 140
+I1018 11:54:14.575212 47349365341952 main.py:353] [main.py:353] conv2d_8: 140
+I1018 11:54:14.575868 47349365341952 main.py:353] [main.py:353] conv2d_10: 280
+I1018 11:54:14.576519 47349365341952 main.py:353] [main.py:353] conv2d_13: 280
+I1018 11:54:14.577170 47349365341952 main.py:353] [main.py:353] conv2d_15: 280
+I1018 11:54:14.577818 47349365341952 main.py:353] [main.py:353] conv2d_17: 280
+I1018 11:54:14.578454 47349365341952 main.py:353] [main.py:353] conv2d_19: 560
+I1018 11:54:14.579187 47349365341952 main.py:353] [main.py:353] conv2d_22: 560
+I1018 11:54:14.579831 47349365341952 main.py:353] [main.py:353] conv2d_24: 560
+I1018 11:54:14.580538 47349365341952 main.py:353] [main.py:353] conv2d_26: 560
+I1018 11:54:17.142529 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4946, Accuracy: 99.89%
+I1018 11:54:24.311629 47349365341952 main.py:426] [main.py:426] 77.0% completion: epoch 77/100. 4.9 steps/s. ETA: 30 min. Time elapsed: 102 min
+I1018 11:54:24.384432 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 76
+I1018 11:54:31.400472 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:54:31.469208 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9714, Accuracy: 76.85%
+I1018 11:54:31.478592 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 77
+I1018 11:55:17.876035 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4864, Accuracy: 99.88%
+I1018 11:56:09.939825 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4764, Accuracy: 99.91%
+I1018 11:56:14.877188 47349365341952 main.py:426] [main.py:426] 78.0% completion: epoch 78/100. 4.9 steps/s. ETA: 29 min. Time elapsed: 104 min
+I1018 11:56:14.954299 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 77
+I1018 11:56:22.368976 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:56:22.440831 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9437, Accuracy: 77.30%
+I1018 11:56:22.452428 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 78
+I1018 11:57:12.152679 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4690, Accuracy: 99.89%
+I1018 11:58:04.536084 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4606, Accuracy: 99.91%
+I1018 11:58:06.980895 47349365341952 main.py:426] [main.py:426] 79.0% completion: epoch 79/100. 4.9 steps/s. ETA: 28 min. Time elapsed: 105 min
+I1018 11:58:07.053233 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 78
+I1018 11:58:13.480597 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 11:58:13.550281 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9252, Accuracy: 77.50%
+I1018 11:58:13.559560 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 79
+I1018 11:59:07.334656 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4534, Accuracy: 99.93%
+I1018 11:59:58.788283 47349365341952 main.py:426] [main.py:426] 80.0% completion: epoch 80/100. 4.8 steps/s. ETA: 27 min. Time elapsed: 107 min
+I1018 11:59:58.862813 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 79
+I1018 12:00:05.449945 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:00:05.520462 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9209, Accuracy: 77.51%
+I1018 12:00:05.532131 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 80
+I1018 12:00:08.077444 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4467, Accuracy: 99.94%
+I1018 12:01:00.440612 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4396, Accuracy: 99.97%
+I1018 12:01:49.598440 47349365341952 main.py:426] [main.py:426] 81.0% completion: epoch 81/100. 4.8 steps/s. ETA: 26 min. Time elapsed: 109 min
+I1018 12:01:49.675069 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 80
+I1018 12:01:57.102383 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:01:57.171591 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9173, Accuracy: 77.71%
+I1018 12:01:57.180677 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 81
+I1018 12:02:03.424151 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4348, Accuracy: 99.92%
+I1018 12:02:54.939642 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4291, Accuracy: 99.95%
+I1018 12:03:41.777251 47349365341952 main.py:426] [main.py:426] 82.0% completion: epoch 82/100. 4.8 steps/s. ETA: 24 min. Time elapsed: 111 min
+I1018 12:03:41.854301 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 81
+I1018 12:03:49.275040 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:03:49.345450 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9070, Accuracy: 77.91%
+I1018 12:03:49.354600 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 82
+I1018 12:03:57.105659 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4241, Accuracy: 99.95%
+I1018 12:04:48.545133 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4200, Accuracy: 99.93%
+I1018 12:05:32.987255 47349365341952 main.py:426] [main.py:426] 83.0% completion: epoch 83/100. 4.8 steps/s. ETA: 23 min. Time elapsed: 113 min
+I1018 12:05:33.089047 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 82
+I1018 12:05:39.502841 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:05:39.573202 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9082, Accuracy: 77.87%
+I1018 12:05:39.583002 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 83
+I1018 12:05:50.368175 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4149, Accuracy: 99.97%
+I1018 12:06:15.953967 47349365341952 main.py:342] [main.py:342] Growing on iteration: 32500
+I1018 12:06:37.383508 47349365341952 main.py:349] [main.py:349] Model number of weights: 34274676
+I1018 12:06:37.383906 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 12:06:37.419554 47349365341952 main.py:353] [main.py:353] conv2d_1: 150
+I1018 12:06:37.420861 47349365341952 main.py:353] [main.py:353] conv2d_4: 150
+I1018 12:06:37.421575 47349365341952 main.py:353] [main.py:353] conv2d_6: 150
+I1018 12:06:37.422232 47349365341952 main.py:353] [main.py:353] conv2d_8: 150
+I1018 12:06:37.422884 47349365341952 main.py:353] [main.py:353] conv2d_10: 300
+I1018 12:06:37.423592 47349365341952 main.py:353] [main.py:353] conv2d_13: 300
+I1018 12:06:37.424242 47349365341952 main.py:353] [main.py:353] conv2d_15: 300
+I1018 12:06:37.424887 47349365341952 main.py:353] [main.py:353] conv2d_17: 300
+I1018 12:06:37.425523 47349365341952 main.py:353] [main.py:353] conv2d_19: 600
+I1018 12:06:37.426234 47349365341952 main.py:353] [main.py:353] conv2d_22: 600
+I1018 12:06:37.426882 47349365341952 main.py:353] [main.py:353] conv2d_24: 600
+I1018 12:06:37.427592 47349365341952 main.py:353] [main.py:353] conv2d_26: 600
+I1018 12:06:40.043017 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4112, Accuracy: 99.98%
+I1018 12:07:06.125490 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4105, Accuracy: 99.93%
+I1018 12:07:49.945600 47349365341952 main.py:426] [main.py:426] 84.0% completion: epoch 84/100. 4.7 steps/s. ETA: 22 min. Time elapsed: 115 min
+I1018 12:07:50.013872 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 83
+I1018 12:07:57.800070 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:07:57.873074 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8992, Accuracy: 77.86%
+I1018 12:07:57.882754 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 84
+I1018 12:08:11.289756 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4079, Accuracy: 99.96%
+I1018 12:09:06.473365 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4040, Accuracy: 99.96%
+I1018 12:09:47.732329 47349365341952 main.py:426] [main.py:426] 85.0% completion: epoch 85/100. 4.7 steps/s. ETA: 21 min. Time elapsed: 117 min
+I1018 12:09:47.804421 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 84
+I1018 12:09:54.589039 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:09:54.660913 47349365341952 main.py:437] [main.py:437] Test NLL: 0.9022, Accuracy: 77.97%
+I1018 12:09:54.670735 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 85
+I1018 12:10:11.620423 47349365341952 main.py:360] [main.py:360] Train Loss: 0.4012, Accuracy: 99.94%
+I1018 12:11:07.350476 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3975, Accuracy: 99.96%
+I1018 12:11:45.606943 47349365341952 main.py:426] [main.py:426] 86.0% completion: epoch 86/100. 4.7 steps/s. ETA: 19 min. Time elapsed: 119 min
+I1018 12:11:45.679418 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 85
+I1018 12:11:52.481868 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:11:52.557608 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8958, Accuracy: 77.86%
+I1018 12:11:52.566993 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 86
+I1018 12:12:11.821015 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3946, Accuracy: 99.96%
+I1018 12:13:06.795590 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3920, Accuracy: 99.97%
+I1018 12:13:42.324629 47349365341952 main.py:426] [main.py:426] 87.0% completion: epoch 87/100. 4.7 steps/s. ETA: 18 min. Time elapsed: 121 min
+I1018 12:13:42.406588 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 86
+I1018 12:13:49.210721 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:13:49.282119 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8967, Accuracy: 78.07%
+I1018 12:13:49.290956 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 87
+I1018 12:14:11.315315 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3896, Accuracy: 99.98%
+I1018 12:15:06.246533 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3872, Accuracy: 99.97%
+I1018 12:15:39.081961 47349365341952 main.py:426] [main.py:426] 88.0% completion: epoch 88/100. 4.7 steps/s. ETA: 17 min. Time elapsed: 123 min
+I1018 12:15:39.173140 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 87
+I1018 12:15:45.945215 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:15:46.021154 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8914, Accuracy: 77.99%
+I1018 12:15:46.030512 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 88
+I1018 12:16:11.037992 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3856, Accuracy: 99.96%
+I1018 12:17:06.145867 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3837, Accuracy: 99.96%
+I1018 12:17:36.493408 47349365341952 main.py:426] [main.py:426] 89.0% completion: epoch 89/100. 4.6 steps/s. ETA: 15 min. Time elapsed: 125 min
+I1018 12:17:36.581099 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 88
+I1018 12:17:43.376104 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:17:43.452325 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8960, Accuracy: 78.16%
+I1018 12:17:43.461546 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 89
+I1018 12:18:11.052953 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3816, Accuracy: 99.98%
+I1018 12:19:05.588170 47349365341952 main.py:342] [main.py:342] Growing on iteration: 35000
+I1018 12:19:25.675398 47349365341952 main.py:349] [main.py:349] Model number of weights: 36536916
+I1018 12:19:25.675638 47349365341952 main.py:351] [main.py:351] Widths after growth
+I1018 12:19:25.710610 47349365341952 main.py:353] [main.py:353] conv2d_1: 160
+I1018 12:19:25.711846 47349365341952 main.py:353] [main.py:353] conv2d_4: 160
+I1018 12:19:25.712564 47349365341952 main.py:353] [main.py:353] conv2d_6: 160
+I1018 12:19:25.713251 47349365341952 main.py:353] [main.py:353] conv2d_8: 160
+I1018 12:19:25.713914 47349365341952 main.py:353] [main.py:353] conv2d_10: 320
+I1018 12:19:25.714570 47349365341952 main.py:353] [main.py:353] conv2d_13: 320
+I1018 12:19:25.715231 47349365341952 main.py:353] [main.py:353] conv2d_15: 320
+I1018 12:19:25.715889 47349365341952 main.py:353] [main.py:353] conv2d_17: 320
+I1018 12:19:25.716531 47349365341952 main.py:353] [main.py:353] conv2d_19: 640
+I1018 12:19:25.717274 47349365341952 main.py:353] [main.py:353] conv2d_22: 640
+I1018 12:19:25.717928 47349365341952 main.py:353] [main.py:353] conv2d_24: 640
+I1018 12:19:25.718649 47349365341952 main.py:353] [main.py:353] conv2d_26: 640
+I1018 12:19:29.320161 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3800, Accuracy: 99.98%
+I1018 12:19:55.713116 47349365341952 main.py:426] [main.py:426] 90.0% completion: epoch 90/100. 4.6 steps/s. ETA: 14 min. Time elapsed: 127 min
+I1018 12:19:55.793003 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 89
+I1018 12:20:03.667130 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:20:03.744896 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8945, Accuracy: 77.81%
+I1018 12:20:03.754404 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 90
+I1018 12:20:35.099357 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3794, Accuracy: 99.98%
+I1018 12:21:31.158182 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3781, Accuracy: 99.99%
+I1018 12:21:56.044305 47349365341952 main.py:426] [main.py:426] 91.0% completion: epoch 91/100. 4.6 steps/s. ETA: 13 min. Time elapsed: 129 min
+I1018 12:21:56.128457 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 90
+I1018 12:22:04.017122 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:22:04.089663 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8919, Accuracy: 77.90%
+I1018 12:22:04.099369 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 91
+I1018 12:22:38.886137 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3771, Accuracy: 99.98%
+I1018 12:23:34.768937 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3758, Accuracy: 99.98%
+I1018 12:23:56.978167 47349365341952 main.py:426] [main.py:426] 92.0% completion: epoch 92/100. 4.6 steps/s. ETA: 11 min. Time elapsed: 131 min
+I1018 12:23:57.058676 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 91
+I1018 12:24:03.936152 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:24:04.013785 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8954, Accuracy: 77.85%
+I1018 12:24:04.023658 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 92
+I1018 12:24:40.185897 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3756, Accuracy: 99.96%
+I1018 12:25:36.359932 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3743, Accuracy: 99.96%
+I1018 12:25:55.870551 47349365341952 main.py:426] [main.py:426] 93.0% completion: epoch 93/100. 4.5 steps/s. ETA: 10 min. Time elapsed: 133 min
+I1018 12:25:55.954035 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 92
+I1018 12:26:02.832669 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:26:02.910087 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8925, Accuracy: 77.85%
+I1018 12:26:02.919262 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 93
+I1018 12:26:43.101431 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3740, Accuracy: 99.96%
+I1018 12:27:38.721875 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3731, Accuracy: 99.98%
+I1018 12:27:55.493500 47349365341952 main.py:426] [main.py:426] 94.0% completion: epoch 94/100. 4.5 steps/s. ETA: 9 min. Time elapsed: 135 min
+I1018 12:27:55.570781 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 93
+I1018 12:28:03.464363 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:28:03.537753 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8920, Accuracy: 77.95%
+I1018 12:28:03.546899 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 94
+I1018 12:28:46.674612 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3722, Accuracy: 100.00%
+I1018 12:29:42.260586 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3723, Accuracy: 99.96%
+I1018 12:29:55.950515 47349365341952 main.py:426] [main.py:426] 95.0% completion: epoch 95/100. 4.5 steps/s. ETA: 7 min. Time elapsed: 137 min
+I1018 12:29:56.024385 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 94
+I1018 12:30:03.904188 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:30:03.981389 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8901, Accuracy: 77.76%
+I1018 12:30:03.990848 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 95
+I1018 12:30:49.768205 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3719, Accuracy: 99.98%
+I1018 12:31:45.788857 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3713, Accuracy: 99.99%
+I1018 12:31:56.629642 47349365341952 main.py:426] [main.py:426] 96.0% completion: epoch 96/100. 4.5 steps/s. ETA: 6 min. Time elapsed: 139 min
+I1018 12:31:56.709214 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 95
+I1018 12:32:03.601403 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:32:03.677428 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8924, Accuracy: 77.92%
+I1018 12:32:03.686422 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 96
+I1018 12:32:51.837646 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3713, Accuracy: 99.97%
+I1018 12:33:47.351351 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3713, Accuracy: 99.97%
+I1018 12:33:55.572474 47349365341952 main.py:426] [main.py:426] 97.0% completion: epoch 97/100. 4.5 steps/s. ETA: 4 min. Time elapsed: 141 min
+I1018 12:33:55.648019 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 96
+I1018 12:34:02.549703 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:34:02.619762 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8919, Accuracy: 77.77%
+I1018 12:34:02.629200 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 97
+I1018 12:34:54.338364 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3710, Accuracy: 99.97%
+I1018 12:35:50.002991 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3709, Accuracy: 99.98%
+I1018 12:35:55.205359 47349365341952 main.py:426] [main.py:426] 98.0% completion: epoch 98/100. 4.4 steps/s. ETA: 3 min. Time elapsed: 143 min
+I1018 12:35:55.281105 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 97
+I1018 12:36:02.109308 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:36:02.186525 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8923, Accuracy: 77.93%
+I1018 12:36:02.195938 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 98
+I1018 12:36:56.557989 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3708, Accuracy: 99.98%
+I1018 12:37:52.418258 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3709, Accuracy: 99.97%
+I1018 12:37:55.073194 47349365341952 main.py:426] [main.py:426] 99.0% completion: epoch 99/100. 4.4 steps/s. ETA: 1 min. Time elapsed: 145 min
+I1018 12:37:55.149865 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 98
+I1018 12:38:02.012030 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:38:02.088188 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8900, Accuracy: 77.97%
+I1018 12:38:02.097485 47349365341952 main.py:406] [main.py:406] Starting to run epoch: 99
+I1018 12:38:58.719901 47349365341952 main.py:360] [main.py:360] Train Loss: 0.3708, Accuracy: 99.97%
+I1018 12:39:54.603734 47349365341952 main.py:426] [main.py:426] 100.0% completion: epoch 100/100. 4.4 steps/s. ETA: 0 min. Time elapsed: 147 min
+I1018 12:39:54.684719 47349365341952 main.py:431] [main.py:431] Starting to run eval at epoch: 99
+I1018 12:40:01.579411 47349365341952 main.py:435] [main.py:435] Done with eval on
+I1018 12:40:01.651572 47349365341952 main.py:437] [main.py:437] Test NLL: 0.8928, Accuracy: 77.88%
+I1018 12:40:02.763392 47349365341952 main.py:455] [main.py:455] Saved checkpoint to /tmp/cifar/checkpoint-4
+I1018 12:40:03.817871 47349365341952 main.py:459] [main.py:459] Saved last checkpoint to /tmp/cifar/checkpoint-5
+Model: "wide_resnet-28-10"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             multiple                  432       
+                                                                 
+ batch_normalization (BatchN  multiple                 64        
+ ormalization)                                                   
+                                                                 
+ activation (Activation)     multiple                  0         
+                                                                 
+ glayer_conv2d_1 (GrowLayer)  multiple                 0 (unused)
+                                                                 
+ activation_1 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_2 (GrowLayer)  multiple                 0 (unused)
+                                                                 
+ conv2d_3 (Conv2D)           multiple                  2560      
+                                                                 
+ batch_normalization_1 (Batc  multiple                 640       
+ hNormalization)                                                 
+                                                                 
+ activation_2 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_4 (GrowLayer)  multiple                 0 (unused)
+                                                                 
+ activation_3 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_5 (GrowLayer)  multiple                 0 (unused)
+                                                                 
+ batch_normalization_2 (Batc  multiple                 640       
+ hNormalization)                                                 
+                                                                 
+ activation_4 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_6 (GrowLayer)  multiple                 0 (unused)
+                                                                 
+ activation_5 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_7 (GrowLayer)  multiple                 0 (unused)
+                                                                 
+ batch_normalization_3 (Batc  multiple                 640       
+ hNormalization)                                                 
+                                                                 
+ activation_6 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_8 (GrowLayer)  multiple                 0 (unused)
+                                                                 
+ activation_7 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_9 (GrowLayer)  multiple                 0 (unused)
+                                                                 
+ batch_normalization_4 (Batc  multiple                 640       
+ hNormalization)                                                 
+                                                                 
+ activation_8 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_10 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ activation_9 (Activation)   multiple                  0         
+                                                                 
+ glayer_conv2d_11 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ conv2d_12 (Conv2D)          multiple                  51200     
+                                                                 
+ batch_normalization_5 (Batc  multiple                 1280      
+ hNormalization)                                                 
+                                                                 
+ activation_10 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_13 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ activation_11 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_14 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ batch_normalization_6 (Batc  multiple                 1280      
+ hNormalization)                                                 
+                                                                 
+ activation_12 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_15 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ activation_13 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_16 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ batch_normalization_7 (Batc  multiple                 1280      
+ hNormalization)                                                 
+                                                                 
+ activation_14 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_17 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ activation_15 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_18 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ batch_normalization_8 (Batc  multiple                 1280      
+ hNormalization)                                                 
+                                                                 
+ activation_16 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_19 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ activation_17 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_20 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ conv2d_21 (Conv2D)          multiple                  204800    
+                                                                 
+ batch_normalization_9 (Batc  multiple                 2560      
+ hNormalization)                                                 
+                                                                 
+ activation_18 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_22 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ activation_19 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_23 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ batch_normalization_10 (Bat  multiple                 2560      
+ chNormalization)                                                
+                                                                 
+ activation_20 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_24 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ activation_21 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_25 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ batch_normalization_11 (Bat  multiple                 2560      
+ chNormalization)                                                
+                                                                 
+ activation_22 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_26 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ activation_23 (Activation)  multiple                  0         
+                                                                 
+ glayer_conv2d_27 (GrowLayer  multiple                 0 (unused)
+ )                                                               
+                                                                 
+ batch_normalization_12 (Bat  multiple                 2560      
+ chNormalization)                                                
+                                                                 
+ activation_24 (Activation)  multiple                  0         
+                                                                 
+ average_pooling2d (AverageP  multiple                 0         
+ ooling2D)                                                       
+                                                                 
+ flatten (Flatten)           multiple                  0         
+                                                                 
+ dense (Dense)               multiple                  64100     
+                                                                 
+=================================================================
+Total params: 9,390,036
+Trainable params: 9,381,044
+Non-trainable params: 8,992
+_________________________________________________________________
+Exception ignored in: <function Pool.__del__ at 0x2b10b073c700>
+Traceback (most recent call last):
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/multiprocessing/pool.py", line 271, in __del__
+    self._change_notifier.put(None)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/projectnb/ivc-ml/piotrt/miniconda3/envs/gradmax/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+OSError: [Errno 9] Bad file descriptor
